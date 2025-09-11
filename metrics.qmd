@@ -1,0 +1,11 @@
+# Metrics
+
+MiMo reports a range of metrics including
+
+1. Mean Length of Utterance in Words
+2. Mean Length of Utterance in Morphemes (provided MiMo is able to morphologically segement your language)
+3. Type Token Ratio
+4. VocD (HDD)
+
+These may be accessed under the `🌈 Let's explore` tab.
+

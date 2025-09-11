@@ -4,5 +4,23 @@
   },
   "about.qmd": {
     "about.html": "1bdd2522"
+  },
+  "transcription.qmd": {
+    "transcription.html": "b4e22839"
+  },
+  "languages.qmd": {
+    "languages.html": "b16f4683"
+  },
+  "entering_data.qmd": {
+    "entering_data.html": "b4a35f5d"
+  },
+  "Colour_highlights.qmd": {
+    "Colour_highlights.html": "0dc2fe37"
+  },
+  "exploring_your_data.qmd": {
+    "exploring_your_data.html": "863829aa"
+  },
+  "metrics.qmd": {
+    "metrics.html": "70246096"
   }
 }

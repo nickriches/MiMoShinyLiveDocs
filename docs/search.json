@@ -1,16 +1,226 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "transcription.html",
+    "href": "transcription.html",
+    "title": "Transcribing data",
     "section": "",
-    "text": "About this site"
+    "text": "MiMo is designed to work with Minimal Input. So all you need to do is transcribe using standard orthography (Roman Alphabet).",
+    "crumbs": [
+      "Transcribing data"
+    ]
+  },
+  {
+    "objectID": "transcription.html#use-of-standard-orthography",
+    "href": "transcription.html#use-of-standard-orthography",
+    "title": "Transcribing data",
+    "section": "",
+    "text": "MiMo is designed to work with Minimal Input. So all you need to do is transcribe using standard orthography (Roman Alphabet).",
+    "crumbs": [
+      "Transcribing data"
+    ]
+  },
+  {
+    "objectID": "transcription.html#sentence-final-punctuation",
+    "href": "transcription.html#sentence-final-punctuation",
+    "title": "Transcribing data",
+    "section": "Sentence-final punctuation",
+    "text": "Sentence-final punctuation\nEvery line should end with an sentence-final punctuation, e.g. a full stop (.), question mark (?), or exclamation mark (!). MiMo uses sentence-final punctuation to determine when a sentence / utterance ends, and a new one begins. So including sentence-final punctuation is critical",
+    "crumbs": [
+      "Transcribing data"
+    ]
+  },
+  {
+    "objectID": "transcription.html#showing-speakers",
+    "href": "transcription.html#showing-speakers",
+    "title": "Transcribing data",
+    "section": "Showing speakers",
+    "text": "Showing speakers\nSpeakers should be shown with a series of letters followed by a colon (:). There should be no spaces, or punctuation characters. So you could type FAT:, FATHER:, Father:, FATHEROFCHILD:, FatherOfChild:\nIf you would like to include multiple words in the speaker name, you could use “camel case”",
+    "crumbs": [
+      "Transcribing data"
+    ]
+  },
+  {
+    "objectID": "transcription.html#punctuation",
+    "href": "transcription.html#punctuation",
+    "title": "Transcribing data",
+    "section": "Punctuation",
+    "text": "Punctuation\nUse standard punctuation. Show contractions with an apostrophe, e.g. we're having fun, I've eaten already. This will analyse we're as a single word containing two morphemes. If you want MiMo to analyse as two words you would need to write the words out in full, e.g. we are.\nYou can add other types of punctuation, e.g. commas and dashes. They will be ignored when conducting the linguistic analysis.",
+    "crumbs": [
+      "Transcribing data"
+    ]
+  },
+  {
+    "objectID": "transcription.html#return-characters",
+    "href": "transcription.html#return-characters",
+    "title": "Transcribing data",
+    "section": "Return characters",
+    "text": "Return characters\nMiMo does not pay attention to return ⏎ characters. So, the following text fragment, which contains lots of return characters\nMOT: Can you tell what we're cooking ? ⏎ \nMOT: Can you smell it ? ⏎ \nCHI: Pasta and chips . ⏎ \nMOT: Yes . ⏎ \nMOT: It's not chips . ⏎ \nMOT: It's pasta and we've got bacon . ⏎ \nCHI: Oh thanks . ⏎ \nwill be treated the same as the following text fragment where the same text is written on a single line.\nMOT: can you tell what we're cooking ? can you smell it ? CHI: pasta and chips . MOT: yes . it's not chips . MOT: it's pasta and we've got bacon . CHI: oh thanks .\nNote that it’s not necessary to always specify the speaker. If no speaker is specified at the beginning of the sentence, then MiMo will assume that the sentence is a continuation of the conversational turn of the previous speaker. This should greatly help to simplify transcription.",
+    "crumbs": [
+      "Transcribing data"
+    ]
+  },
+  {
+    "objectID": "transcription.html#comments",
+    "href": "transcription.html#comments",
+    "title": "Transcribing data",
+    "section": "Comments",
+    "text": "Comments\nIf you want to include text which does not belong to a speaker you can use comments. These involve placing text inside round brackets, as in the example above. MiMo will not assign word classes to text in round brackets, and will not include this text in the various metrics which it calculates (Mean Length of Utterance, and various lexical metrics)",
+    "crumbs": [
+      "Transcribing data"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "MiMoShinyLiveDocs",
+    "title": "Do we need another language analysis app?",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "MiMo logo",
+    "crumbs": [
+      "Do we need another language analysis app?"
+    ]
+  },
+  {
+    "objectID": "languages.html",
+    "href": "languages.html",
+    "title": "Automatic language detection",
+    "section": "",
+    "text": "Once you have entered some text, MiMo automatically tries to detect the language. It needs to do this so it can ‘parse’ the text. This involves analysing its structure, and assigning part-of-speech tags. It uses an algorithm which prioritises speed over accuracy. The more text you input the more accurate the analysis.\nFor short fragments of text, it may get things spectacularly wrong. It sometimes analyses English as Middle Frisian! If this happens, all you have to do is specify the language in the textbox as shown below.",
+    "crumbs": [
+      "Automatic language detection"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "languages.html#morphological-analysis-in-english",
+    "href": "languages.html#morphological-analysis-in-english",
+    "title": "Automatic language detection",
+    "section": "Morphological analysis in English",
+    "text": "Morphological analysis in English\nMorphological analysis is coded for English only. This is via a two stage process;\n\nConsult the universal dependency part of speech tags for information regarding grammatical feature with morphological consequences, e.g. past tense, progressive aspect etc.\nIf a particular grammatical feature is present, e.g. past, search for the regular morpheme on the word in question.\n\nThis strategy is accurate for English as morphology is highly regular, and is also othographically coded in a regular fashion (e.g. all regular English words, when written, end in -ed).\nThis is quite of lot of work, so I have not done this for any other languages.\n\n\n\n\n\n\nNote\n\n\n\nThe code to morphologically tag English is introduced by an RStudio bookmark called # English labelling rules ----",
+    "crumbs": [
+      "Automatic language detection"
+    ]
+  },
+  {
+    "objectID": "languages.html#a-workaround-for-non-english-languages",
+    "href": "languages.html#a-workaround-for-non-english-languages",
+    "title": "Automatic language detection",
+    "section": "A workaround for non-English languages",
+    "text": "A workaround for non-English languages\nFor non-English languages you can delimit morphemes using word-internal punctuation, e.g. we’re having a nice time / esta-mos pasandolo bien (SPANISH).\nThe word class analysis overrides the word-internal punctuation, parsing it as one word, rather than two.",
+    "crumbs": [
+      "Automatic language detection"
+    ]
+  },
+  {
+    "objectID": "entering_data.html",
+    "href": "entering_data.html",
+    "title": "Entering data",
+    "section": "",
+    "text": "Just copy and paste your data into the textbox. Be careful, when pasting from a word processor document (e.g. Microsoft Word), as this may insert unusual characters (e.g. tab and return characters) which may affect the processing of the data. Ideally you should be transcribing your data in the plain text (.txt) format, which is supported by apps such as Notepad for Windows, and TextEdit for MacOS (Apple). Apps used by programmers for writing code, e.g. Sublime Text, and Visual Studio are also good for writing plain text files.\n\n\n\nYou also have the option to upload the data in plain text format.\n\n\n\n\nThat’s fine, as long as you copy and paste the text into the textbox, rather than uploading the file.",
+    "crumbs": [
+      "Entering data"
+    ]
+  },
+  {
+    "objectID": "entering_data.html#pasting-in-the-text-box",
+    "href": "entering_data.html#pasting-in-the-text-box",
+    "title": "Entering data",
+    "section": "",
+    "text": "Just copy and paste your data into the textbox. Be careful, when pasting from a word processor document (e.g. Microsoft Word), as this may insert unusual characters (e.g. tab and return characters) which may affect the processing of the data. Ideally you should be transcribing your data in the plain text (.txt) format, which is supported by apps such as Notepad for Windows, and TextEdit for MacOS (Apple). Apps used by programmers for writing code, e.g. Sublime Text, and Visual Studio are also good for writing plain text files.",
+    "crumbs": [
+      "Entering data"
+    ]
+  },
+  {
+    "objectID": "entering_data.html#uploading",
+    "href": "entering_data.html#uploading",
+    "title": "Entering data",
+    "section": "",
+    "text": "You also have the option to upload the data in plain text format.",
+    "crumbs": [
+      "Entering data"
+    ]
+  },
+  {
+    "objectID": "entering_data.html#what-if-i-want-to-use-word",
+    "href": "entering_data.html#what-if-i-want-to-use-word",
+    "title": "Entering data",
+    "section": "",
+    "text": "That’s fine, as long as you copy and paste the text into the textbox, rather than uploading the file.",
+    "crumbs": [
+      "Entering data"
+    ]
+  },
+  {
+    "objectID": "index.html#finding-the-sweet-spot",
+    "href": "index.html#finding-the-sweet-spot",
+    "title": "Do we need another language analysis app?",
+    "section": "Finding “the sweet spot”",
+    "text": "Finding “the sweet spot”\nThere are a wide range of language analysis apps designed for child language and clinical data, including CLAN, SALT and SUGAR. However, none of these hits the 🍰 sweet spot between power and usability. CLAN is an impressive app, but difficult to learn, and for this reason is used mainly by the research community. SUGAR is a quick and simple system designed for Speech and Language Therapists, but the therapist still has to do some work to calculate MLU, code target structures, and derive some norms. With MiMo the plan is to “get the best of both worlds” by combining the ease and simplicity of SUGAR with the power and flexibilty CLAN.\nThe name MiMo describes the philosophy of the app. “Mi” refers to minimal inputs. In other words, the app is easy to use, and requires very little training. “Mo” refers to maximal outputs. This refers to the rich data produced by the app, including 🌈 coloured word classes, and 📉 graphs of norms.",
+    "crumbs": [
+      "Do we need another language analysis app?"
+    ]
+  },
+  {
+    "objectID": "index.html#making-language-analysis-fun",
+    "href": "index.html#making-language-analysis-fun",
+    "title": "Do we need another language analysis app?",
+    "section": "Making language analysis fun 😁!",
+    "text": "Making language analysis fun 😁!\nMany apps for language analysis are quite mechanical in the way they work. You feed text in, and they produce a range of numerical metrics. There is little room for intellectual curiosity or intuition.\nMiMo, buy contrast, allows the user to explore their data. You can quickly and easily search for particular word classes, or grammatical phenomena. You can quickly identify the longer and more complex structures that a participant produces. You can sort alphabetically to find rote-learned patterns that an individual is particularly dependent on. And these are just some of the things you can do!",
+    "crumbs": [
+      "Do we need another language analysis app?"
+    ]
+  },
+  {
+    "objectID": "Colour_highlights.html",
+    "href": "Colour_highlights.html",
+    "title": "Colour highlights",
+    "section": "",
+    "text": "If MiMo is able to access a grammar for you language it will colour your text using different colours for different wordclasses\n\nWhen you hover over the word, the word class will show in a box above the word.\n\nThe colours are designed to be meaningful. For example, all words related to the verb, e.g. verb, adverb, auxiliary verb are highlighted various shades of red / pink. I chose a bright colour because verbs are essential to sentences. There are many languages which have sentences consisting only of a verb, but few which have sentences consisting only of a noun.\n\n\nIf you do not like the beautiful colours I have chosen, you may alter them on the 🌈 Colours tab. Unfortunately, changes in colour do not persist across sessions, so if you close the browser, you still want to use your bespoke colours, you will need to redo them.\nYou can also choose sets of colours, e.g. Verb-related words only, or Linking words.",
+    "crumbs": [
+      "Colour highlights"
+    ]
+  },
+  {
+    "objectID": "Colour_highlights.html#changing-the-colour-scheme",
+    "href": "Colour_highlights.html#changing-the-colour-scheme",
+    "title": "Colour highlights",
+    "section": "",
+    "text": "If you do not like the beautiful colours I have chosen, you may alter them on the 🌈 Colours tab. Unfortunately, changes in colour do not persist across sessions, so if you close the browser, you still want to use your bespoke colours, you will need to redo them.\nYou can also choose sets of colours, e.g. Verb-related words only, or Linking words.",
+    "crumbs": [
+      "Colour highlights"
+    ]
+  },
+  {
+    "objectID": "metrics.html",
+    "href": "metrics.html",
+    "title": "Metrics",
+    "section": "",
+    "text": "Metrics\nMiMo reports a range of metrics including\n\nMean Length of Utterance in Words\nMean Length of Utterance in Morphemes (provided MiMo is able to morphologically segement your language)\nType Token Ratio\nVocD (HDD)\n\nThese may be accessed under the 🌈 Let's explore tab.",
+    "crumbs": [
+      "Metrics"
+    ]
+  },
+  {
+    "objectID": "exploring_your_data.html",
+    "href": "exploring_your_data.html",
+    "title": "Exploring your data",
+    "section": "",
+    "text": "MiMo presents your data in an interactive table which provides wonderful new ways to explore your data.\n\n\nWhen you filter the table it will show only rows where a particular search string occurs. You do this by typing characters in either (a) the empty boxes at the top of each column, or (b) the empty box right t the top of the table. The boxes at the top of each column are column filters and the search applies to that column only. The big box at the top is a universal filter. It searches all columns."
+  },
+  {
+    "objectID": "exploring_your_data.html#filtering",
+    "href": "exploring_your_data.html#filtering",
+    "title": "Exploring your data",
+    "section": "",
+    "text": "When you filter the table it will show only rows where a particular search string occurs. You do this by typing characters in either (a) the empty boxes at the top of each column, or (b) the empty box right t the top of the table. The boxes at the top of each column are column filters and the search applies to that column only. The big box at the top is a universal filter. It searches all columns."
   }
 ]

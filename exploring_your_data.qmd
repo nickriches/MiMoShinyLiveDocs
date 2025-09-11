@@ -1,0 +1,8 @@
+# Exploring your data
+
+MiMo presents your data in an interactive table which provides wonderful new ways to explore your data.
+
+## Filtering
+
+When you **filter** the table it will show only rows where a particular search string occurs. You do this by typing characters in either (a) the empty boxes at the top of each column, or (b) the empty box right t the top of the table. The boxes at the top of each column are **column filters** and the search applies to that column only. The big box at the top is a **universal filter**. It searches all columns.
+

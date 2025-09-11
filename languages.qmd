@@ -1,0 +1,38 @@
+
+# Automatic language detection
+
+Once you have entered some text, MiMo automatically tries to detect the language. It needs to do this so it can 'parse' the text. This involves analysing its structure, and assigning part-of-speech tags. It uses an algorithm which prioritises speed over accuracy. The more text you input the more accurate the analysis.
+
+For short fragments of text, it may get things spectacularly wrong. It sometimes analyses English as `Middle Frisian`! If this happens, all you have to do is specify the language in the textbox as shown below.
+
+# What languages can MiMo analyse?
+
+MiMo uses the Universal Dependency infrastructure to analyse text. This is a network of servers funded by the European Union. Grammars are available for 65 mainly European languages, which constitute only a small minority of the world's language. These are listed in the manual for the R `udpipe` library. This list is reproduced in a simplified format below;
+
+> Afrikaans, Ancient Greek, Arabic, Armenian, Basque, Belarusian, Bulgarian, Buryat, Catalan, Chinese (variety not specified), Classical Chinese, Coptic, Croatian, Czech, Danish, Dutch-alpino, English, Estonian, Finnish, French, Galician, German, Greek, Hebrew, Hindi, Hungarian, Indonesian", Irish, Italian, Japanese, Kazakh, Korean, Kurmanji, Latin, Latvian, Lithuanian, Maltese, Marathi, North Sami, Norwegian, Old church Slavonic, Old French, 
+Old Russian, Persian, Polish, Portuguese, Romanian, Russian, Sanskrit, Scottish Gaelic, Serbian, "slovak-snk", Slovenian, Spanish, Swedish, Tamil, Telugu, Turkish, Ukrainian, Upper Sorbian, Urdu, Uyghur, Veitnamese, Wolof
+
+I have only trialled the app with the major European languages, and I have no idea how well it will work with languages which do not use a Roman alphabet.
+
+# Morphological analysis
+
+## Morphological analysis in English
+
+Morphological analysis is coded for English only. This is via a two stage process;
+
+1. Consult the universal dependency part of speech tags for information regarding grammatical feature with morphological consequences, e.g. past tense, progressive aspect etc.
+2. If a particular grammatical feature is present, e.g. past, search for the regular morpheme on the word in question.
+
+This strategy is accurate for English as morphology is highly regular, and is also othographically coded in a regular fashion (e.g. all regular English words, when written, end in *-ed*).
+
+This is quite of lot of work, so I have not done this for any other languages.
+
+::: {.callout-note}
+The code to morphologically tag English is introduced by an RStudio bookmark called `# English labelling rules ----`
+:::
+
+## A workaround for non-English languages
+
+For non-English languages you can delimit morphemes using word-internal punctuation, e.g. *we're having a nice time* / *esta-mos pasandolo bien* (SPANISH).
+
+The word class analysis overrides the word-internal punctuation, parsing it as one word, rather than two.
