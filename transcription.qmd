@@ -14,7 +14,7 @@ Every line should end with an **sentence-final punctuation**, e.g. a full stop (
 
 If you would like to include multiple words in the speaker name, you could use "camel case"
 
-![](camelCase.png)
+![](camelCase.png){width=400}
 
 ## Punctuation
 

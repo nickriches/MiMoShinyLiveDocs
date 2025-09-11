@@ -1,6 +1,6 @@
 ![MiMo logo](mimo.png)
 
-# Do we need another language analysis app?
+# Why I created a new app
 
 ## Finding "the sweet spot"
 
@@ -14,7 +14,7 @@ Many apps for language analysis are quite mechanical in the way they work. You f
 
 MiMo, buy contrast, allows the user to explore their data. You can quickly and easily search for particular word classes, or grammatical phenomena. You can quickly identify the longer and more complex structures that a participant produces. You can sort alphabetically to find rote-learned patterns that an individual is particularly dependent on. And these are just some of the things you can do!
 
-# So how do I use it?
+# So how do I get started?
 
 It's simple! Just go to the [https://mimolanguageanalysis.uk](https://mimolanguageanalysis.uk) to run the analysis app, and go to this website to run the norms app (norms provided by CHILDES / Talkbank).
 
@@ -22,7 +22,7 @@ You can run a simple analysis in just a couple of minutes. Here is a video showi
 
 {{< video https://youtu.be/SyuXvm96lkA >}}
 
-Here are steps you need to follow
+And here is a description of the steps shown in the video.
 
 **1. copy the text below**
 

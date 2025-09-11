@@ -54,7 +54,7 @@
     "href": "transcription.html#return-characters",
     "title": "Transcribing data",
     "section": "Return characters",
-    "text": "Return characters\nMiMo does not pay attention to return ⏎ characters. So, the following text fragment, which contains lots of return characters\nMOT: Can you tell what we're cooking ? ⏎ \nMOT: Can you smell it ? ⏎ \nCHI: Pasta and chips . ⏎ \nMOT: Yes . ⏎ \nMOT: It's not chips . ⏎ \nMOT: It's pasta and we've got bacon . ⏎ \nCHI: Oh thanks . ⏎ \nwill be treated the same as the following text fragment where the same text is written on a single line.\nMOT: can you tell what we're cooking ? can you smell it ? CHI: pasta and chips . MOT: yes . it's not chips . MOT: it's pasta and we've got bacon . CHI: oh thanks .\nNote that it’s not necessary to always specify the speaker. If no speaker is specified at the beginning of the sentence, then MiMo will assume that the sentence is a continuation of the conversational turn of the previous speaker. This should greatly help to simplify transcription.",
+    "text": "Return characters\nMiMo does not pay attention to return ⏎ characters. So, the following text fragment, which contains lots of return characters\nMOT: Can you tell what we're cooking ? ⏎ \nMOT: Can you smell it ? ⏎ \nCHI: Pasta and chips . ⏎ \nMOT: Yes . ⏎ \nMOT: It's not chips . ⏎ \nMOT: It's pasta and we've got bacon . ⏎ \nCHI: Oh thanks . ⏎ \nwill be treated the same as the following text fragment where the same text is written on a single line.\nMOT: Can you tell what we're cooking ? Can you smell it ? CHI: Pasta and chips . MOT: Yes . It's not chips . MOT: It's pasta and we've got bacon . CHI: Oh thanks .\nNote that it’s not necessary to always specify the speaker. If no speaker is specified at the beginning of the sentence, then MiMo will assume that the sentence is a continuation of the conversational turn of the previous speaker. This should greatly help to simplify transcription.",
     "crumbs": [
       "Transcribing data"
     ]
@@ -72,11 +72,11 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Do we need another language analysis app?",
+    "title": "Why I created a new app",
     "section": "",
     "text": "MiMo logo",
     "crumbs": [
-      "Do we need another language analysis app?"
+      "Why I created a new app"
     ]
   },
   {
@@ -162,21 +162,21 @@
   {
     "objectID": "index.html#finding-the-sweet-spot",
     "href": "index.html#finding-the-sweet-spot",
-    "title": "Do we need another language analysis app?",
+    "title": "Why I created a new app",
     "section": "Finding “the sweet spot”",
     "text": "Finding “the sweet spot”\nThere are a wide range of language analysis apps designed for child language and clinical data, including CLAN, SALT and SUGAR. However, none of these hits the 🍰 sweet spot between power and usability. CLAN is an impressive app, but difficult to learn, and for this reason is used mainly by the research community. SUGAR is a quick and simple system designed for Speech and Language Therapists, but the therapist still has to do some work to calculate MLU, code target structures, and derive some norms. With MiMo the plan is to “get the best of both worlds” by combining the ease and simplicity of SUGAR with the power and flexibilty CLAN.\nThe name MiMo describes the philosophy of the app. “Mi” refers to minimal inputs. In other words, the app is easy to use, and requires very little training. “Mo” refers to maximal outputs. This refers to the rich data produced by the app, including 🌈 coloured word classes, and 📉 graphs of norms.",
     "crumbs": [
-      "Do we need another language analysis app?"
+      "Why I created a new app"
     ]
   },
   {
     "objectID": "index.html#making-language-analysis-fun",
     "href": "index.html#making-language-analysis-fun",
-    "title": "Do we need another language analysis app?",
+    "title": "Why I created a new app",
     "section": "Making language analysis fun 😁!",
     "text": "Making language analysis fun 😁!\nMany apps for language analysis are quite mechanical in the way they work. You feed text in, and they produce a range of numerical metrics. There is little room for intellectual curiosity or intuition.\nMiMo, buy contrast, allows the user to explore their data. You can quickly and easily search for particular word classes, or grammatical phenomena. You can quickly identify the longer and more complex structures that a participant produces. You can sort alphabetically to find rote-learned patterns that an individual is particularly dependent on. And these are just some of the things you can do!",
     "crumbs": [
-      "Do we need another language analysis app?"
+      "Why I created a new app"
     ]
   },
   {
