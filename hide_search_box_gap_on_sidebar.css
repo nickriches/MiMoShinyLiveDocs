@@ -1,0 +1,9 @@
+/* styles.css */
+.sidebar .sidebar-search {
+  display: none !important;
+}
+
+.sidebar .sidebar-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}

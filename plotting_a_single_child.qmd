@@ -1,0 +1,12 @@
+## Plotting a single child
+
+To plot your child, enter their name and their score for a particular metric (e.g. MLU-in-words), and calculate their age, by entering their date of birth, and the date of test. The child will then be plotted on the graph. The lettering above the graph will show their z-score (how many standard deviations they fall above or below the mean), and also their percentile rank.
+
+{{< video https://youtu.be/AL_Wb_0vt20 >}}
+
+## Zooming in and out
+
+To zoom in, select a portion of the plot, and double click. To zoom out, double click again.
+
+{{< video https://youtu.be/lAi2z2p5Rd8 >}}
+

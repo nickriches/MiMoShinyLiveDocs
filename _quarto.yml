@@ -1,0 +1,75 @@
+project:
+  type: website
+  output-dir: docs
+
+
+editor:
+  render-on-save: true
+
+language: 
+  search-text-placeholder: Search (Press S key for shortcut)
+
+website:
+  title: "📄 MiMo Docs"
+  search: true
+  page-navigation: true
+  navbar:
+    left:
+      - Links to web apps...  
+      - text: ⚙️ MiMo App
+        href: www.mimolanguageanalysis.uk
+      - text: 📈 MiMo Norms
+        href: www.norms.mimolanguageanalysis.uk
+    right: 
+      - text: "✉️ Nick G Riches"
+        href: "mailto:nick.riches@gmail.com"
+      - text: "🌏 github repo"
+        href: "https://github.com/nickriches/MiMoShinyLive"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+    - section: "🧱 Basics"
+      contents:
+      - text: "Intro"
+        href: index.qmd
+      - transcription.qmd
+      - entering_data.qmd
+      - languages.qmd
+      - morphological_analysis.qmd
+      - other_syntactic_metrics.qmd
+      - lexical_analysis.qmd
+      - Colour_highlights.qmd
+    - section: "🔎 Exploring your data"
+      contents:
+      - filtering.qmd
+      - sorting.qmd
+      - metrics.qmd
+      - tags.qmd
+    - section: "📈 MiMo Norms"
+      contents:
+      - plotting_norms.qmd
+      - plotting_a_single_child.qmd
+    - section: "👩🏽‍💻 Techie stuff"
+      contents:
+      - is_my_data_safe.qmd
+      - making_copies.qmd
+    - section: "🎬 Instructional videos"
+      contents:
+      - instructional_videos.qmd
+    - section: "🙏🏽 Acknowledgements"
+      contents:
+      - acknowledgements.qmd
+
+
+format:
+  html:
+    code-overflow: wrap
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true      
+
+
+

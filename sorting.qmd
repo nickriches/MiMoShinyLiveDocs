@@ -1,0 +1,42 @@
+
+# Sorting
+
+## Ways to sort columns using buttons
+
+MiMo provides three buttons to sort columns
+
+1. Sort by order
+2. Sort by length
+3. Sort alphabetically
+
+![Image of sort buttons](sort_buttons.png)
+
+## 1. Sorting by order
+
+The `Sort by order` button merely provides you with a way to restore the order of the utterances to the original chronological order.
+
+## 2. Sort by length
+
+With this, you can pull the longest utterances towards the top of a table. This is exceptionally useful because the longest utterances of a participant may be particularly informative about their language abilities. For example, numerous studies have found close associations between an MLU (Mean Length of Utterance) derived from the MacArthur Communicative Development Inventory (CDI), which is based on parental report of the child's **three longest utterances**, and other metrics of language ability, e.g. an MLU derived from a large sample (Devescovi et al,. 2005), or measures of grammatical complexity based on MacArthur CDI questionnaire data (Fenson et al. 1994; Ezeizbarrena & Fernandez, 2018).
+
+There are two reasons why investigating the longest utterances produced by a participant are particularly informative about their language abilities.
+
+Firstly, in order to produce longer utterances children need to have mastered a variety of relatively advanced syntactic building blocks including using conjunctions to combine clauses, using prepositions, realising complex argument structures, and elaboration within phrases, e.g. adding adjectives to Noun Phrases, or adverbs to Verb Phrases. The longer utterances demonstrate a child's use of such building blocks.
+
+In addition, many of the shorter utterances are artificially short as they are influenced by discourse factors. For example, if the caregiver asks a "Yes/No" question, e.g. *Did you have a good time?* answering with a single word *Yes* is an appropriate response.
+
+By focusing on the child's longest utterances we can be sure that (a) they provide a full picture of the building blocks they have at their disposal, and (b) their length has not been influenced by discourse factors.
+
+### 3. Sort alphabetically
+
+Though for simplicity's sake, I have described this as an "alphabetical sort", it does more than just sort alphabetically. It sorts firstly by initial word class, and then alphabetically. This is exceptionally useful means of determining whether the child is dependent on any sentence-initial rote-learned formula.
+
+Below, data from the CHILDES Thomas corpus has been sorted "alphabetically". "Thomas" is aged 2 years and 6 months at the time the data were collected. We can see that alphabetical sorting can be used to identify frequent rote-learned utterances, e.g. *All done now*, or slot-and-frame patterns, e.g. *Another X*.
+
+![Alphabetical Sorting](alphabetical_sorting.png)
+
+## Sorting without buttons
+
+Any column in the spreadsheet may be sorted by pressing the sort symbol at the top of each column. However, the buttons make this process far easier.
+
+![Sorting without buttons](sort_symbol.png){fig-align="center"}

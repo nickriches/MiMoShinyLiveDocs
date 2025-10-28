@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>filtering – 📄 MiMo Docs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sorting.html" rel="next">
+<link href="./Colour_highlights.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-2e5cbef59756d87313a778b4017e2694.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "Search (Press S key for shortcut)",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">📄 MiMo Docs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Links to web apps...</span>
+    </span>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./www.mimolanguageanalysis.uk"> 
+<span class="menu-text">⚙️ MiMo App</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./www.norms.mimolanguageanalysis.uk"> 
+<span class="menu-text">📈 MiMo Norms</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:nick.riches@gmail.com"> 
+<span class="menu-text">✉️ Nick G Riches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/nickriches/MiMoShinyLive"> 
+<span class="menu-text">🌏 github repo</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filtering.html">🔎 Exploring your data</a></li><li class="breadcrumb-item"><a href="./filtering.html">Filtering</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">🧱 Basics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./transcription.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transcribing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entering_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Entering data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./languages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic language detection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./morphological_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Morphological analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other_syntactic_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other syntactic metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lexical_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lexical analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Colour_highlights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Colour highlights</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">🔎 Exploring your data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./filtering.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sorting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sorting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tags.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tags versus comments</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">📈 MiMo Norms</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plotting_norms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting norms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plotting_a_single_child.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting a single child</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">👩🏽‍💻 Techie stuff</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./is_my_data_safe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Is my data safe?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./making_copies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making copies of the app</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">🎬 Instructional videos</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instructional_videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructional videos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">🙏🏽 Acknowledgements</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link active" data-scroll-target="#filtering">Filtering</a>
+  <ul class="collapse">
+  <li><a href="#what-is-filtering" id="toc-what-is-filtering" class="nav-link" data-scroll-target="#what-is-filtering">What is ‘filtering’?</a></li>
+  <li><a href="#how-do-you-filter" id="toc-how-do-you-filter" class="nav-link" data-scroll-target="#how-do-you-filter">How do you filter?</a>
+  <ul class="collapse">
+  <li><a href="#universal-search-filter" id="toc-universal-search-filter" class="nav-link" data-scroll-target="#universal-search-filter">Universal search filter</a></li>
+  <li><a href="#speaker-filter" id="toc-speaker-filter" class="nav-link" data-scroll-target="#speaker-filter">Speaker filter</a></li>
+  <li><a href="#column-filters" id="toc-column-filters" class="nav-link" data-scroll-target="#column-filters">Column Filters</a></li>
+  <li><a href="#autosuggest" id="toc-autosuggest" class="nav-link" data-scroll-target="#autosuggest">Autosuggest</a></li>
+  </ul></li>
+  <li><a href="#demo-videos" id="toc-demo-videos" class="nav-link" data-scroll-target="#demo-videos">Demo videos</a></li>
+  <li><a href="#built-in-universal-search-filters" id="toc-built-in-universal-search-filters" class="nav-link" data-scroll-target="#built-in-universal-search-filters">Built in Universal Search Filters</a>
+  <ul class="collapse">
+  <li><a href="#has-search-terms" id="toc-has-search-terms" class="nav-link" data-scroll-target="#has-search-terms">1. “Has” search terms</a></li>
+  <li><a href="#is-search-terms" id="toc-is-search-terms" class="nav-link" data-scroll-target="#is-search-terms">2. “Is” search terms</a></li>
+  <li><a href="#searching-for-individual-words" id="toc-searching-for-individual-words" class="nav-link" data-scroll-target="#searching-for-individual-words">3. Searching for individual words</a></li>
+  </ul></li>
+  <li><a href="#filtering-by-individual-columns" id="toc-filtering-by-individual-columns" class="nav-link" data-scroll-target="#filtering-by-individual-columns">Filtering by individual columns</a></li>
+  <li><a href="#tips-on-using-filtering" id="toc-tips-on-using-filtering" class="nav-link" data-scroll-target="#tips-on-using-filtering">Tips on using filtering</a>
+  <ul class="collapse">
+  <li><a href="#infinitives" id="toc-infinitives" class="nav-link" data-scroll-target="#infinitives">1. Infinitives</a></li>
+  <li><a href="#search-for-auxiliary-verbs" id="toc-search-for-auxiliary-verbs" class="nav-link" data-scroll-target="#search-for-auxiliary-verbs">2. Search for auxiliary verbs</a></li>
+  <li><a href="#search-for-multi-clausal-putterances" id="toc-search-for-multi-clausal-putterances" class="nav-link" data-scroll-target="#search-for-multi-clausal-putterances">3. Search for multi-clausal putterances</a></li>
+  <li><a href="#negatives" id="toc-negatives" class="nav-link" data-scroll-target="#negatives">4. Negatives</a></li>
+  <li><a href="#pronouns" id="toc-pronouns" class="nav-link" data-scroll-target="#pronouns">5. Pronouns</a></li>
+  <li><a href="#complex-grammatical-constructions" id="toc-complex-grammatical-constructions" class="nav-link" data-scroll-target="#complex-grammatical-constructions">6. Complex grammatical constructions</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filtering.html">🔎 Exploring your data</a></li><li class="breadcrumb-item"><a href="./filtering.html">Filtering</a></li></ol></nav></header>
+
+
+
+
+<section id="filtering" class="level1">
+<h1>Filtering</h1>
+<section id="what-is-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-filtering">What is ‘filtering’?</h2>
+<p>When you <strong>filter</strong> the table it will show only rows where a particular search string occurs.</p>
+</section>
+<section id="how-do-you-filter" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-you-filter">How do you filter?</h2>
+<p>Here is a diagram showing the main search filters in MiMo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="universal_versus_column_filters.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram of different search filters in MiMo</figcaption>
+</figure>
+</div>
+<section id="universal-search-filter" class="level3">
+<h3 class="anchored" data-anchor-id="universal-search-filter">Universal search filter</h3>
+<p>The filter box on the top right is called the <strong>universal search filter</strong> as it is possible to enter a wide variety of search terms (described below).</p>
+</section>
+<section id="speaker-filter" class="level3">
+<h3 class="anchored" data-anchor-id="speaker-filter">Speaker filter</h3>
+<p>The box on the top is the <strong>speaker filter</strong> designed to select specific speakers. We can use this to focus on the language of a particular individual. For example, in transcripts of child speech, there are a lot of adult utterances and relatively few child utterances. Filtering out the adult utterances can help the researcher or therapist to better analyse the child’s linguistic data.</p>
+</section>
+<section id="column-filters" class="level3">
+<h3 class="anchored" data-anchor-id="column-filters">Column Filters</h3>
+<p>These are not visible when the app starts up, but may be shown by clicking the <code>Show column filters</code> button.</p>
+</section>
+<section id="autosuggest" class="level3">
+<h3 class="anchored" data-anchor-id="autosuggest">Autosuggest</h3>
+<p>If you click on either the universal search filter, or the speaker filter, they will provide a series of options. This is called <strong>autosuggest</strong>. As you type, the list of options narrows. For example, if you type <code>has</code> in the universal search box it will show you a wide range of possible grammatical features, including word classes. If you type <code>hasP</code> the list will narrow to show you <code>hasPrep</code> (has Preposition), and <code>hasPron</code> (has Pronoun). To select either of these just (a) select the term with the Down Arrow, (b) select the term by clicking on it, (c) continue typing.</p>
+<p>Below is a screenshot of the autosuggest prompts you will see if you type the word <code>verb</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="autosuggest.png" class="img-fluid figure-img"></p>
+<figcaption>Screen of autosuggest capabilities</figcaption>
+</figure>
+</div>
+<p>To select one of the autosuggestions just (a) type until only one word remains, and then press enter, or (b) moved the cursor down to select one of the autosuggestions and then press enter. The process is show in the videos below.</p>
+</section>
+</section>
+<section id="demo-videos" class="level2">
+<h2 class="anchored" data-anchor-id="demo-videos">Demo videos</h2>
+<p>Below is a video showing how to search for child utterances (corresponding to the speaker <code>CHI:</code>) which contain an auxiliary (using the <code>hasAux</code> search in the <strong>universal search filter</strong>)</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/OMp2Gxh7Ep4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Note that if multiple search terms are added to the universal search box, <strong>OR logic</strong> is applied. So if you search for <code>hasAux</code> and <code>isInterrogative</code> it will bring up any sentence with either an auxiliary verb, interrogative sentence form, or both.</p>
+<p>The videos below show how to use <strong>AND logic</strong>. In the first video, an <strong>and statement</strong> is used in the universal search filter to find sentences where the auxiliary verb is <em>can</em>. Note how we use the <code>&amp;</code> symbol, and place this in front of the item we are searching for (<em>can</em>).</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/k87WJ-LoWdM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>A much simpler alternative is to unhide the column filters, and use these to search for the specific word;</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/6aPpiLjoaCI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="built-in-universal-search-filters" class="level2">
+<h2 class="anchored" data-anchor-id="built-in-universal-search-filters">Built in Universal Search Filters</h2>
+<p>The following search terms are shown if you click in the Universal Search Box;</p>
+<section id="has-search-terms" class="level3">
+<h3 class="anchored" data-anchor-id="has-search-terms">1. “Has” search terms</h3>
+<p>This is mainly used to identify utterances containing particular word classes. Examples are</p>
+<section id="a.-word-classes" class="level4">
+<h4 class="anchored" data-anchor-id="a.-word-classes">a. Word classes</h4>
+<p><code>hasNoun</code>, <code>hasDet</code> (Determiner), <code>hasPron</code> (Pronoun), <code>hasPrep</code> (Preposition), <code>hasVerb</code> (Main Verb), <code>hasAux</code> (Auxiliary Verb), <code>hasAdv</code> (Adverb), <code>hasAdj</code> (Adjective), <code>hasCconj</code> (Coordinating Conjunction), <code>hasSconj</code> (Subordinating Conjunction), <code>hasNeg</code> (negative particle), <code>hasNum</code> (numeral)</p>
+</section>
+<section id="b.-tense-and-aspect" class="level4">
+<h4 class="anchored" data-anchor-id="b.-tense-and-aspect">b. Tense and aspect</h4>
+<p><code>hasPastTense</code>,<code>hasPresTense</code> (present tense), <code>hasCopula</code> (copula = verb <em>to be</em> used as a main verb), <code>hasProgForm</code> / <code>hasPresParticiple</code> (progressive form), <code>hasPerfForm</code> / <code>hasPerfParticiple</code> (perfective form), and <code>hasInfinitive</code>.</p>
+<p>NB the terms “present participle” and “past participle” are misnomers as they do not mark present or past tense, but as they are so widely used I have included these as an option.</p>
+</section>
+<section id="c.-clause-complexity" class="level4">
+<h4 class="anchored" data-anchor-id="c.-clause-complexity">c.&nbsp;Clause complexity</h4>
+<p><code>has2clauses</code>, <code>has3clauses</code>, <code>has4clauses</code>, <code>has5clauses</code>, <code>hasMultipleClauses</code></p>
+<p>To determine the number of clauses MiMo counts the number of finite verbs</p>
+</section>
+<section id="d.-complex-sentences" class="level4">
+<h4 class="anchored" data-anchor-id="d.-complex-sentences">d.&nbsp;Complex sentences</h4>
+<p><code>hasPassive</code> and <code>hasRelativePronoun</code></p>
+</section>
+<section id="e.-comments-and-tags" class="level4">
+<h4 class="anchored" data-anchor-id="e.-comments-and-tags">e. Comments and tags</h4>
+<p><code>hasComment</code>, <code>hasTag</code></p>
+<p>If you wish to search for a tag containing particular content type the following <code>hasTagContentsOfTagMinusSpaces</code>. So if you have created a tag called <code>[Optional Infinitive Error]</code>, to find utterances containing this tag you search for <code>hasTagOptionalInfinitiveError</code>. Note the use of “camel case”. This makes the search string more readable, but it will work without the camel case.</p>
+</section>
+<section id="f.-conversational-turns" class="level4">
+<h4 class="anchored" data-anchor-id="f.-conversational-turns">f.&nbsp;Conversational turns</h4>
+<p>It is possible to search for conversational turns of varying lengths as follows;</p>
+<p><code>turn1</code> identifies utterances in turns consisting of a single utterance. <code>turn2</code> identifies utterances in turns consisting of two utterances. Other search strings are <code>turn3</code> <code>turn4</code> <code>turn5</code> <code>turn5plus</code>. The latter identifies utterances which belong to conversational turns which are 5 or more utterances long.</p>
+</section>
+</section>
+<section id="is-search-terms" class="level3">
+<h3 class="anchored" data-anchor-id="is-search-terms">2. “Is” search terms</h3>
+<p>These are used to identify Speech Acts;</p>
+<p><code>isDeclarative</code>, <code>isInterrogative</code>, <code>isQuestion</code>, <code>isImperative</code>, <code>isExclamative</code></p>
+<p>Don’t forget, there is a convention to use a single exclamation mark for a directive, and a double exclamation mark for an exclamative.</p>
+</section>
+<section id="searching-for-individual-words" class="level3">
+<h3 class="anchored" data-anchor-id="searching-for-individual-words">3. Searching for individual words</h3>
+<p>As shown in the second video above, you can type individual words in the Universal Search Box. If you do this, the drop down list will get smaller and smaller until there are no options, then you will be invited to select the word you have entered.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The filter at the top right of the page operates primarily on the columns which lie to the right of the solid line. If you really wish to see how the filtering works, you can scroll to the right. But this is <strong>not recommended</strong> unless you feel super curious.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="scary_stuff.png" class="img-fluid figure-img"></p>
+<figcaption>Image warning you not to look at data on the right of the solid line</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="filtering-by-individual-columns" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-by-individual-columns">Filtering by individual columns</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is an advanced feature and unless you are feeling super-confident you are not encouraged to do this!</p>
+</div>
+</div>
+<p>As mentioned above, if you click <code>Show column filters</code> at the top of the page, filters will appear at the top of each column. This allows for more finegrained sorting. This feature is shown in the third video above.</p>
+<p>You may, if you are feeling brave, scroll to the right to see the hidden columns, and try to filter on these. Column X shows very finegrained grammatical information including syntactic functions (Subject, Object), and Agreement phenomena. You may wish to conduct some searches on this column.</p>
+</section>
+<section id="tips-on-using-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="tips-on-using-filtering">Tips on using filtering</h2>
+<p>Filtering is a powerful tool to help you explore your data in an intuitive and creative fashion. Here are just some of the things you can look for, which will give you a good indication of your child / client’s language level</p>
+<section id="infinitives" class="level3">
+<h3 class="anchored" data-anchor-id="infinitives">1. Infinitives</h3>
+<p>You can search for infinitives using the search string <code>hasInfinitive</code>. This is an extremely useful search because the use of an infinitive where a tensed form is required is a common error in child language, and also in adult acquired language difficulties. This is sometimes described as an optional infinitive error.</p>
+</section>
+<section id="search-for-auxiliary-verbs" class="level3">
+<h3 class="anchored" data-anchor-id="search-for-auxiliary-verbs">2. Search for auxiliary verbs</h3>
+<p>You can find auxiliary verbs by using <code>hasAux</code>. Questions and negatives also frequently contain auxiliaries, and you can search for these using <code>isInterrogative</code> and <code>hasNegative</code>.</p>
+<p>Young children struggle to use auxiliaries correctly. In particular, they have difficulties correctly using auxiliaries to make questions. A search for auxiliaries or questions will identify such difficulties</p>
+</section>
+<section id="search-for-multi-clausal-putterances" class="level3">
+<h3 class="anchored" data-anchor-id="search-for-multi-clausal-putterances">3. Search for multi-clausal putterances</h3>
+<p>You can find these using <code>hasMultipleClauses</code>.</p>
+<p>Being able to link clauses together using conjunctions is a relatively advanced skill. This search enables you to explore this ability. <code>hasSconj</code> will also identify sentences which contain subordinating conjunctions.</p>
+</section>
+<section id="negatives" class="level3">
+<h3 class="anchored" data-anchor-id="negatives">4. Negatives</h3>
+<p>In English, children take a long time to master negatives. Often their negative utterances will lack do-support, e.g.&nbsp;<code>she no like it</code>.</p>
+</section>
+<section id="pronouns" class="level3">
+<h3 class="anchored" data-anchor-id="pronouns">5. Pronouns</h3>
+<p>Case-marking errors on pronouns are an important characteristic of the speech of young children, e.g.&nbsp;<em>Me go there</em>. A search for pronouns will help to identify this common error pattern.</p>
+</section>
+<section id="complex-grammatical-constructions" class="level3">
+<h3 class="anchored" data-anchor-id="complex-grammatical-constructions">6. Complex grammatical constructions</h3>
+<p>You can search for the passive using <code>hasPassive</code> and for relative clauses using <code>hasRelativePronoun</code></p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Colour_highlights.html" class="pagination-link" aria-label="Colour highlights">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Colour highlights</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sorting.html" class="pagination-link" aria-label="Sorting">
+        <span class="nav-page-text">Sorting</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

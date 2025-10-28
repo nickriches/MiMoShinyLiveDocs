@@ -1,0 +1,12 @@
+# Metrics
+
+MiMo reports a range of metrics including
+
+1. Mean Length of Utterance in Words
+2. Mean Length of Utterance in Morphemes (provided MiMo is able to morphologically segement your language)
+3. Type Token Ratio
+4. VocD (HDD) (A measure of lexical diversity)
+
+These may be accessed under the `🌈 Let's explore` tab.
+
+Further information on these metrics is provided in the [Morphological analysis](morphological_analysis.qmd), [Other syntactic metrics](other_syntactic_metrics.qmd) and [Lexical analysis](lexical_analysis.qmd) sections.

@@ -1,0 +1,67 @@
+
+# Tags versus comments
+
+## What are tags
+
+Tags are shown using square brackets. They are used to describe any linguistic or communicative behaviour which might be of interest. For example, if a child's words exhibit fronting errors, e.g. they say "dod" instead of "dog", you may may wish to create a tag to describe this behaviour, e.g.
+
+`CHI: Look at the dod [fronting error]!`
+
+Or if a child produces an Optional Infinitive error, you could also tag this, e.g.
+
+`CHI: Him go [OI] there.`
+
+When MiMo analyses the sentence, the words in tags will not be part-of speech tagged, e.g.
+`
+![Demonstration of tags](demo_of_tags.png)
+
+## The difference between tags and comments
+
+While comments are shown with `(round brackets)` tags are shown with `[square brackets]`. Both are ignored when MiMo part-of-speech tags data. So what's the difference?
+
+Well, tags have two additional features
+
+1. We can search for tags
+2. We can obtain metrics for tags
+
+## Searching for tags
+
+To search for tags just type `hasTagNameOfTag` in the universal search box. This should all be one word, and should not contain spaces. So if you have a tag called `fronting error` then to search for this tag you need to type `hasTagFrontingError` (NB the search string is not case sensitive and capital letters are included, using 'camel case' to make it easier to see word boundaries)
+
+## Obtaining metrics for tags
+
+To obtain metrics for tags go to `Let's explore > (4) Tags`.
+
+## How to code specific behaviours using comments and tags
+
+### A worked example: reformulation with correction
+
+Comments and tags enable you to code a variety of behaviours of interest. Let's have a look at how to code "reformulations with correction", e.g. *She said...he said*. The CHAT transcription, which is a read by the CLAN software package (Computerised Language Analysis) has a special format for this;
+
+`CHI: <she said> [\\] he said he was happy`
+
+The reformulated part of the utterance is placed inside triangular brackets, while the `[\\]` notation shows that this part of the sentence is reformulated. CHAT is a detailed system with transcription conventions to cover almost every eventuality you can think of. However, to master this system you have to plough through a manual over 300 pages long. By contrast, using comments and tags you can do something vaguely similar without such intensive study (remember **Minimal input**);
+
+`CHI: (she said) [rwc] he said he was happy`
+
+The round brackets are used to create a comment which is excluded from the analysis and does not contribute to metrics such as MLU. The tag `[rwc]` has been invented by the user and stands for `reformulation with correction`. Obviously this is a bespoke label, and if the transcriber wishes to share their transcript, they would probably need to provide a crib for the different tags they have used. But it does the job. By typing `hasTagRwc` in the universal search filter, the analyst can quickly identify all utterances which contain this tag. And by going to the `tags` dropdown, they can quickly obtain statistics about how frequently the speakers use this tag.
+
+### Other examples
+
+#### Phonological error
+
+`CHI: I saw a dog (dodI) [fronting error]`
+
+The adult form *dog* is written so that it may contribute to metrics such as MLU and Type Token Ratios. The child-specific orthographic form *dodi* could also be used, but I have chosen the adult form because the grammar is more likely to assign it the correct part-of-speech tag (Noun). The phonetic form is placed in round brackets to stop it from being analysed. A tag is used to describe the type of error.
+
+#### Code switching
+
+`CHI: I saw a dog (perro) [code-switching-Spanish]`
+
+The English form *dog* is written because we would like this to contribute to metrics such as MLU. MiMo assumes only a single language, so might struggle to provide a word class for *perro* (though it is normally very good at guessing word classes from context). The Spanish form is written in round brackets to exclude it from analyses. The tag provides information about the type of code-switching.
+
+#### Gestures
+
+`CHI: I want the (points at apple) [pointing gesture] apple`
+
+This is pretty self-explanatory. Tags can be used to identify and differentiate between different types of gesture (if this happens to be a particular interest of the coder)

@@ -1,0 +1,20 @@
+
+# Is my data safe?
+
+## Is my data transferred to a remote server?
+
+No. The MiMo web app works by running code in your browser. It does this using a technology called [Web Assembly](https://en.wikipedia.org/wiki/WebAssembly). All of the processing is conducted in the browser. And most importantly **no data leaves the browser**. You can verify this by running the app in `developer mode`. If you are not sure how to do this, ask a technician.
+
+Data cannot be accessed when the browser window is closed, as it is not cached.
+
+## Is the app hosted securely?
+
+The app is hosted on **github** which is owned by Microsoft (NB the URL does not contain the word `github`, but it redirects to a github site). This pretty much guarantees good security. However, it should be noted that github accounts and code repositories do sometimes get hacked.
+
+You'll note that the URL (mimolanguageanalysis.uk) does not mention github. This is because the github site is served from a custom domain hosted at [godaddy](https://www.godaddy.com). I use **two factor authentication** on this account.
+
+## Minimising risks
+
+The risks of a malign party accessing your data are **low**. But they are not completely negligible. The best approach to data security is to make sure that your data is **fully-anonymised**. This means you need to replace all identifying information (in particular names) with either pseudonyms or anonymous IDs.
+
+If your data is highly sensitive, you might wish to consider running the app offline. This is covered in the next section.

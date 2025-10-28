@@ -1,0 +1,74 @@
+![MiMo logo](mimo.png)
+
+# How is MiMo different to other apps?
+
+## Finding "the sweet spot"
+
+There are a wide range of language analysis apps designed for child language and clinical data, including [CLAN](https://dali.talkbank.org/clan/), [SALT](https://www.saltsoftware.com) and [SUGAR](https://www.sugarlanguage.org). However, none of these hits the  🍰 sweet spot between **power** and **usability**. CLAN is an impressive app, but difficult to learn, and for this reason is used mainly by the research community. SUGAR is a quick and simple system designed for Speech and Language Therapists, but the therapist still has to do some work to calculate metrics such as MLU, and code target structures. With MiMo the plan is to "get the best of both worlds" by combining the ease and simplicity of SUGAR with the power and flexibility CLAN.
+
+The name MiMo describes the philosophy of the app. "Mi" refers to **minimal inputs**. In other words, the app is easy to use, and requires little training. "Mo" refers to **maximal outputs**. This refers to the rich data produced by the app, including 🌈 coloured word classes, and 📉 graphs of norms.
+
+## Making language analysis fun 😁!
+
+Many apps for language analysis are quite mechanical in the way they work. You feed text in, and they produce a range of numerical metrics. There is little room for intellectual curiosity or intuition.
+
+MiMo, buy contrast, allows the user to explore their data. You can quickly and easily search for particular word classes, or grammatical phenomena. You can quickly identify the longer and more complex structures that a child produces. You can sort alphabetically to find rote-learned patterns that an individual is particularly dependent on. And these are just some of the things you can do!
+
+# So how do I get started?
+
+It's simple! To run the **language analysis app**, just go to [https://mimolanguageanalysis.uk](https://mimolanguageanalysis.uk) or click on the `⚙️ MiMo App` tab above. To run the **norms app** just go to [https://mimolanguageanalysis.uk](https://mimolanguageanalysis.uk), or click on the `📈 MiMo Norms` tab above (norms provided by CHILDES / Talkbank).
+
+You can run a simple analysis in just a couple of minutes. Here is a video showing how to get up-and-running.
+
+{{< video https://youtu.be/CipY3y3SFq0 >}}
+
+Here is a description of the steps shown in the video.
+
+**1. Copy the text below**
+
+```{txt}
+MOT: Can you tell what we're cooking ?
+MOT: Can you smell it ?
+CHI: Pasta and chips .
+MOT: Yes .
+MOT: It's not chips .
+MOT: It's pasta and we've got bacon .
+CHI: Oh thanks .
+```
+
+**2. Open the MiMo app.**
+
+**3. Paste the text in the window.** (under `Let's get started... > (1) Enter text`)
+
+![Enter text dialog](enter_text.png){width=300}
+
+**4. Then go to "(2) Check language". It recognises the text as English.**
+
+![Check language dialog](check_language.png){width=300}
+
+**5. Now go to the "Let's explore > (1) Coloured output" tab**
+
+![Image showing coloured text](coloured_text.png){width=300}
+
+::: {.callout-warning}
+The app may take up to half a minute to start. This is because it needs to download code into the browser.
+:::
+
+# Instructional videos
+
+The instructional videos page contains the complete series of instructional videos which are used in this manual. This is at the bottom of the index, and can be accessed by clicking [instructional videos](instructional_videos.qmd).
+
+The app is designed to be simple to use, and you can pick up most of the basics by just watching the videos.
+
+
+# Is this free?
+
+Absolutely. The apps and website are hosted in GitHub pages. However, it's always good to have a backup in case the app experiences verb high usage. This is discussed in the [making copies](making_copies.qmd) section of the manual.
+
+# How do I learn more?
+
+Just carry on reading!
+
+Use the handy navigation menu on the left to move between sections, and the page navigation menu on the right to move between sections in a page.
+
+You can also use the search bar 🔎 on the top right to find topics (or press `S`)

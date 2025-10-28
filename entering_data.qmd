@@ -1,0 +1,15 @@
+# Entering data
+
+## Pasting in the text box
+
+Just copy and paste your data into the textbox. Be careful, when pasting from a Word Processor document (e.g. Microsoft Word), as this may insert unusual characters (e.g. tab and return characters) which may affect the processing of the data. Ideally you should be transcribing your data in the plain text (.txt) format, which is supported by apps such as **Notepad** for Windows, and **TextEdit** for MacOS (Apple). Apps used by programmers for writing code, e.g. Sublime Text, and Visual Studio are also good for writing plain text files.
+
+## Uploading
+
+You also have the option to upload the data in plain text format.
+
+![Image showing upload dialog](upload_data.png)
+
+## What if I want to use Microsoft Word?
+
+That's fine, as long as you copy and paste the text into the textbox, rather than uploading the file.

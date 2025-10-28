@@ -1,0 +1,23 @@
+/* --- Fix sidebar top gap when search moves to navbar --- */
+
+/* Hide the empty search container and its wrapper */
+.sidebar .mt-2.flex-shrink-0.align-items-center,
+.sidebar .sidebar-search,
+.sidebar .sidebar-search #quarto-search {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Pull the menu up to the top */
+.sidebar .sidebar-menu-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Optional: remove extra spacing under the header/logo */
+.sidebar .sidebar-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}

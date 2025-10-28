@@ -1,0 +1,28 @@
+# Plotting norms
+
+The `📈 MiMo Norms` app provides access to norms, and allows you to norm-reference your child, e.g. find out which percentile they fall in.
+
+## Accessing the MiMo norms app
+
+To access the MiMo norms app, just click the link above (`📈 MiMo Norms`).
+
+## Information about the normative data
+
+The normative data has been downloaded using the `childesR` package. This gives you access to various metrics (MLU in words and morphemes, HDD, and type-token ratios) for every transcript in CHILDES. Normative data are provided for a range of collections of corpora: English-UK, English - North America, Kideval (American English), Spanish, French, German, Japanese, "East asian", the "Clinical" collection, and the "Bilingual" collection. Further information about these collections is available from [Talkbank](https://talkbank.org).
+
+The Kideval collection is a set of American English transcripts which have been vetted for reliability.
+
+## Plotting norms
+
+To plot the norms, all you need to do is specify the `Collection` and the `Variable`. This is shown in the video below. 
+
+{{< video https://youtu.be/AL_Wb_0vt20 >}}
+
+# How are means and standard deviations calculated?
+
+This section provides some slightly technical detail on how the means and standard deviations are calculated.
+
+You may skip this if you wish!
+
+The mean line in the plots is calculated using a rolling mean. The `rollapply` function from the R package `zoo` is used for this purpose. The `Bin width` variable, which may be manipulated in the `📈 MiMo Norms` app is used to determine the width of the window which is used to calculate this mean (and also the standard deviations). This is set at 10. What this means, is that the mean and standard deviations for a specific time point are calculated on the basis of ten corpora. So for a particular age, the mean age is based on the five corpora prior to this age, and the five corpora afterwards.
+    

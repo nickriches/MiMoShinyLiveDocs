@@ -1,0 +1,14 @@
+
+# Lexical analysis
+
+## A note on the metrics
+
+The **lexical analysis** tab displays two lexical metrics; the **Hypergeometric Density Distribution (HDD)**, and **Type Token Ratios**, both of which are calculated by the *koRpus* package in R.
+
+## Interpretation of metrics
+
+It should be noted that **Type Token Ratios** are unreliable for short corpora, and are influenced by the overall length of the corpus. By contrast, **HDD** is much more reliable because it takes length into account.
+
+In the koRpus manual, **HDD** is described as an analogue of **VocD** which is a widely used metric supported by the [CLAN](https://dali.talkbank.org/clan/) language analysis system. This metric, just like **HDD** automatically accounts for the length of the language sample. However, I have noted that **HDDs** for child language data differ quite a lot from what one would expect based on published norms for **VocD** (Durán, P., Malvern, D., Richards, B., & Chipere, N. (2004). Developmental Trends in Lexical Diversity. Applied Linguistics, 25(2), 220–242. https://doi.org/10.1093/applin/25.2.220). I am not sure what is happening here. There is some quite complex maths being used in the calculation of these metrics! (If someone has insights, do let me know)
+
+Nonetheless, the HDD norms provided by `MiMo Norms` demonstrate a consistent developmental progression. Because of this, I would cautiously suggest that **HDD** norms could be used in conjunction with `MiMo Norms`.          

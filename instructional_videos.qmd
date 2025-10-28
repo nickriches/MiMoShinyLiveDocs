@@ -1,0 +1,34 @@
+
+# Instructional videos
+
+## Entering data and running analysis
+
+{{< video https://youtu.be/CipY3y3SFq0 >}}
+
+## Filtering
+
+Searching for utterances with auxiliary verbs
+
+{{< video https://youtu.be/OMp2Gxh7Ep4 >}}
+
+Searching for utterances with auxiliary verb *can* via the **universal search filter**
+
+{{< video https://youtu.be/k87WJ-LoWdM >}}
+
+Searching for utterances with auxiliary verb *can* via a combination of the **universal search filter** and the **column search filter**
+
+{{< video https://youtu.be/6aPpiLjoaCI >}}
+
+## Norms
+
+Creating plots
+
+{{< video https://youtu.be/AL_Wb_0vt20 >}}
+
+Plotting a single child
+
+{{< video https://youtu.be/2MFiNcNTWVs >}}
+
+Zooming in and out
+
+{{< video https://youtu.be/lAi2z2p5Rd8 >}}

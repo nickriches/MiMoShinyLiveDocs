@@ -1,0 +1,18 @@
+
+# Other syntactic metrics
+
+These are found under `Let's explore > Syntactic measures`
+
+![The syntactic metrics tag](syntactic_metrics_tab.png)
+
+## Number of Utterances (NUtts)
+
+This is just the number of utterances per participant (with each utterance delimited by sentence-final punctuation)
+
+## Mean Number of Clauses per Utterance (MNumCl)
+
+This is calculated from the number of **finite** verbs per utterance. So it will miss any **non-finite** clauses. If you want to see how MiMo is doing the calculations, you can find a column called `num_fin_clause` in the `Let's explore > (1) Coloured output` tab.
+
+## Mean Length of Turn (MLT)
+
+This is the mean number of utterances per conversational turn. 

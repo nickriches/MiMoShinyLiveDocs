@@ -1,0 +1,34 @@
+
+# Morphological analysis
+
+## Morphological analysis in English
+
+Morphological analysis is coded for English only. This is via a two stage process;
+
+1. MiMo consults the Universal Dependency part-of-speech tags for information regarding grammatical features with morphological consequences, e.g. past tense, progressive aspect etc.
+
+2. If a particular grammatical feature is present, e.g. **past**, MiMo searches for the regular morpheme on the word in question.
+
+This strategy is accurate for English as morphology is highly regular, and is also othographically coded in a regular fashion (e.g. all regular English words, when written, end in *-ed*).
+
+This is quite of lot of work, so I have not done this for any other languages.
+
+Morphologically complex words are shown in a column called `Morph Complex Words`.
+
+::: {.callout-note}
+The code to morphologically tag English is introduced by an RStudio bookmark called `# English labelling rules ----` (see `app.R` file). If people wish to add code to morphologically tag other languages, do drop me a line!
+:::
+
+## A workaround for non-English languages
+
+For non-English languages you can show morphemes using dashes, e.g. *we're having a nice time* / *lo esta-mos pasando bien* (SPANISH).
+
+The word class analysis overrides the word-internal punctuation, parsing it as one word, rather than two. However, the morpheme counts respect the use of the dash, e.g. parsing *estamos* as two morphemes. With the little testing I have done on this system, it works surprisingly well. That said, it might be best to calculate Mean-Length-of-Utterance **in words** rather morphemes for non-English languages.
+
+## How to view morphological metrics in MiMo
+
+Go to `Let's explore > Syntactic measures`
+
+{{< video https://youtu.be/RBbU_FpvqTA >}}
+
+The provided morphological metrics are **Number of utterances**  and **Mean Length of Utterance (MLU) in words**.

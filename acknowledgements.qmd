@@ -1,0 +1,56 @@
+
+# Acknowledgements
+
+## Newcastle University
+
+The app would not have been possible without a funded sabbatical provided by Newcastle University. I have also been encouraged and supported to use the app with successive generations of Speech and Language Therapy students, and this has helped to further refine the app. In particular I would like to thank **Carol Moxam** for her wisdom and encouragement, **Janet Webster** for supporting the roll out of the app with the students, and finally the students, for being willing and delightful guinea pigs.
+
+## Github
+
+The app has been hosted on **Github**, which is owned by **Microsoft**. Github generously channels some of its profits for supporting free and open source software, and the hosting of non-profit websites.
+
+## Open source frameworks
+
+The app is designed with a range of open source technologies. It is programmed in **R** (R Core Team (2025). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.), and exploits the Shiny App framework for designing web apps (Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J, Dipert A, Borges B (2024). _shiny: Web Application Framework for R_. doi:10.32614/CRAN.package.shiny
+<https://doi.org/10.32614/CRAN.package.shiny>, R package version 1.10.0, <https://CRAN.R-project.org/package=shiny>). As such, it is a testament to the power and flexibility of open source software.
+
+## The Posit Foundation
+
+The **Posit Foundation** is a non-profit foundation which supports the R infrastructure, and develops the RStudio and Positron apps which are used to analyse R data.
+
+In particular, I would like to thank **George Stagg** for developing the **webR / shinylive framework** which has been used to run the app (Stagg, G. W., Lionel, H., & Others. (2023). _webR: The statistical language R compiled to WebAssembly via Emscripten (Version 0.2.2) [Computer software]_. <https://github.com/r-wasm/webr>, Schloerke B, Chang W, Stagg G, Aden-Buie G (2024). _shinylive: Run 'shiny' Applications in the Browser_. doi:10.32614/CRAN.package.shinylive <https://doi.org/10.32614/CRAN.package.shinylive>, R package version 0.3.0, <https://CRAN.R-project.org/package=shinylive>.). The webR / shinylive framework is instrumental to the rollout of this app as it has enabled me to share the app widely without incurring costs for running and / or maintaining a server. George also kindly helped to host the MiMo app for a number of years at Newcastle.
+
+I should also acknowledge the amazing [Quarto scientific publishing platform](https://quarto.org) which has been used to create these help pages. It's an fantastic tool which we should all be using, both for scientific publication, and for pedagogical purposes.
+
+## Talkbank / CHILDES
+
+[Talkbank / CHILDES](https://talkbank.org) is a platform which hosts the CLAN language analysis app, and a large number of data sets from both clinical and non-clinical populations. The norms which are used in MiMo are derived from CHILDES. In particular, I used the `childesR` app to bulk download child language data (Braginsky M, Sanchez A, Yurovsky D (2022). _childesr: Accessing the 'CHILDES' Database_. doi:10.32614/CRAN.package.childesr <https://doi.org/10.32614/CRAN.package.childesr>, R package version 0.2.3, <https://CRAN.R-project.org/package=childesr>). It also provides the `KIDEVAL` norms which can be accessed in the Norms app, a carefully selected corpus of highly-reliable data.
+
+## Universal Dependencies Framework
+
+This is multinational project has been partly supported by **Google**, in addition to funding from **European Research Councils** (grant GX20-16819X of the Czech Science Foundation awarded to Daniel Zeman and grant 2016-01817 of the Swedish Research Council Joakim Nivre). The Universal Dependencies are used to part-of-speech tag the linguistic data.
+
+## Other R Packages
+
+Xie Y, Cheng J, Tan X (2024). _DT: A Wrapper of the JavaScript Library 'DataTables'_. doi:10.32614/CRAN.package.DT <https://doi.org/10.32614/CRAN.package.DT>, R package version 0.33, <https://CRAN.R-project.org/package=DT>.
+
+Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data Manipulation_. doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4, <https://CRAN.R-project.org/package=dplyr>.
+
+Wickham H (2025). _stringr: Simple, Consistent Wrappers for Common String Operations_. doi:10.32614/CRAN.package.stringr <https://doi.org/10.32614/CRAN.package.stringr>, R package version 1.5.2, <https://CRAN.R-project.org/package=stringr>.
+
+Wijffels J (2023). _udpipe: Tokenization, Parts of Speech Tagging, Lemmatization and Dependency Parsing with the 'UDPipe' 'NLP' Toolkit_. doi:10.32614/CRAN.package.udpipe <https://doi.org/10.32614/CRAN.package.udpipe>, R package version 0.8.11, <https://CRAN.R-project.org/package=udpipe>.
+
+Hornik K, Rauch J, Buchta C, Feinerer I (2024). _textcat: N-Gram Based Text Categorization_. doi:10.32614/CRAN.package.textcat <https://doi.org/10.32614/CRAN.package.textcat>, R package version 1.0-9, <https://CRAN.R-project.org/package=textcat>.
+
+Zeileis A, Grothendieck G (2005). “zoo: S3 Infrastructure for Regular and Irregular Time Series.” _Journal of Statistical Software_, *14*(6), 1-27. doi:10.18637/jss.v014.i06 <https://doi.org/10.18637/jss.v014.i06>.
+
+Michalke, M. (2021). koRpus: Text Analysis with Emphasis on POS Tagging, Readability, and Lexical Diversity (Version 0.13-8). Available from https://reaktanz.de/?c=hacking&s=koRpus
+
+Attali D (2023). _colourpicker: A Colour Picker Tool for Shiny and for Selecting Colours in Plots_. doi:10.32614/CRAN.package.colourpicker <https://doi.org/10.32614/CRAN.package.colourpicker>, R package version 1.3.0, <https://CRAN.R-project.org/package=colourpicker>.
+
+## ChatGPT
+
+In the interests of full disclosure I have used ChatGPT quite intensively in the final stages of developing the app. In particular I have used it to write javascript routines, and it has also been super-helpful for getting the app to run via webR / web assembly.
+
+
+
