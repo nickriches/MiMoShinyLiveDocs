@@ -3,7 +3,7 @@
 
 The app is hosted on GitHub pages, and will work as long as it does not exceed their permitted bandwidth. Because processing takes place in the browser, rather than on a server, I don't anticipate that this will happen.
 
-However, if you wish to be absolutely sure that the app will run at all times there are two things you could consider.
+However, if you wish to be absolutely sure that the app will run at all times there are three things you could consider.
 
 ## 1. Alternative URLs
 
