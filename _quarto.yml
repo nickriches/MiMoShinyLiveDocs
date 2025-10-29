@@ -17,9 +17,9 @@ website:
     left:
       - Links to web apps...  
       - text: ⚙️ MiMo App
-        href: www.mimolanguageanalysis.uk
+        href: https://www.mimolanguageanalysis.uk
       - text: 📈 MiMo Norms
-        href: www.norms.mimolanguageanalysis.uk
+        href: https://norms.mimolanguageanalysis.uk
     right: 
       - text: "✉️ Nick G Riches"
         href: "mailto:nick.riches@gmail.com"
