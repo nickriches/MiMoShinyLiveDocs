@@ -54,6 +54,7 @@ website:
       contents:
       - is_my_data_safe.qmd
       - making_copies.qmd
+      - posit_shiny_live_service.qmd
     - section: "🎬 Instructional videos"
       contents:
       - instructional_videos.qmd

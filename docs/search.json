@@ -160,7 +160,7 @@
     "href": "making_copies.html",
     "title": "Making copies of the app",
     "section": "",
-    "text": "The app is hosted on GitHub pages, and will work as long as it does not exceed their permitted bandwidth. Because processing takes place in the browser, rather than on a server, I don’t anticipate that this will happen.\nHowever, if you wish to be absolutely sure that the app will run at all times there are three things you could consider.\n\n\nPosit provides access to a service called ShinyLive which lets you run web apps via web assembly. This means you don’t need to pay for a server. To access the web app via ShinyLive go to\n⚙️ MiMo app for the web app, and 📈 MiMo norms for the norms app.\nNB I am trying not to overload this wonderful free service, but it’s always there as a backup in case anything goes wrong with the GitHub websites.\n\n\n\nFirstly, you can download the app.R file from github, and just run it. Before you do so, you will need to install a variety of packages using the following commands;\n\nFor the MiMo app\n\nrequiredpackages &lt;- c('shiny', 'DT', 'dplyr',\n'stringr', 'udpipe' 'textcat', 'zoo',\n'koRpus', 'koRpus.lang.en', 'colourpicker')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\n\nFor the MiMo norms\n\nrequiredpackages &lt;- c('shiny', 'ggplot2', 'dplyr', 'zoo')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\nNote that if you do this you will still need to have your computer connected to the internet this is because (a) the MiMo app needs to download the Universal Dependency grammar (b) the MiMo app reads the normative data from a specially made github page.\nIt should also be noted that some of the hyperlinks at the top of the page will not work because they point to existing web locations.\n\n\n\nThis is a good option if you want to absolutely ensure that there are no bandwidth issues. To do this you just need to clone the repo, and set it up using github pages. An LLM such as ChatGPT or Claude will give you advice on how to do this.",
+    "text": "The app is hosted on GitHub pages, and will work as long as it does not exceed their permitted bandwidth. Because processing takes place in the browser, rather than on a server, this is very unlikely happen.\nHowever, it’s probably best to make your own copies of the app. Here are a couple of ways to do this.\n\n\nThis is by far the neatest and most user-friendly way to make a local copy of the app. Your browser saves the app as a web page. However, bear in mind, that because an online service is used for part-of-speech tagging, your computer will need to be connected to the internet for it to work.\nBelow are instructions on how to create “Progressive Web Apps” in the most widely-used browsers. If you use a different browser, a quick internet search, or query to a large language model, will provide you with instructions.\nChrome (Windows/Mac/Linux)\n\nVisit mimolanguageanalysis.uk\nClick the menu icon (⋮) in the top-right corner\nSelect “Install MiMo Language Analysis…” or “Save and Share” → “Install page as app”\nClick Install in the popup\n\nThe app will open in a new window and add an icon to your desktop/applications\nEdge (Windows/Mac)\n\nVisit mimolanguageanalysis.uk\nClick the menu icon (⋯) in the top-right corner\nSelect “Apps” → “Install this site as an app”\nClick Install in the popup\n\nThe app will appear in your Start menu (Windows) or Applications folder (Mac)\nSafari (Mac/iOS)\nSafari doesn’t support PWA installation the same way, but you can create a home screen shortcut:\nOn Mac:\n\nVisit mimolanguageanalysis.uk\nClick File → “Add to Dock”\n\nThe site will appear as an app in your Dock\nOn iPhone/iPad:\n\nVisit mimolanguageanalysis.uk in Safari\nTap the Share button (square with arrow)\nScroll down and tap “Add to Home Screen”\nTap Add\nThe app icon will appear on your home screen\n\nFirefox\nFirefox has limited PWA support:\nWindows: No PWA installation available—just bookmark the site Android: Menu (⋮) → “Install”\n\n\n\nIf you are familiar with the R environment, you can download the app.R files from github, and just run them.\nThe URL for the the MiMo app is:\nhttps://github.com/nickriches/MiMoShinyLive\nand the URL for the Norms is:\nhttps://github.com/nickriches/MiMoShinyLiveNorms\nIn order for the apps to run, you will need to install a variety of packages. The following code automatically does this:\n\nFor the MiMo app\n\nrequiredpackages &lt;- c('shiny', 'DT', 'dplyr',\n'stringr', 'udpipe' 'textcat', 'zoo',\n'koRpus', 'koRpus.lang.en', 'colourpicker')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\n\nFor the MiMo norms\n\nrequiredpackages &lt;- c('shiny', 'ggplot2', 'dplyr', 'zoo')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\nNote that if you do this you will still need to have your computer connected to the internet this is because (a) the MiMo app needs to download the Universal Dependency grammar (b) the MiMo app reads the normative data from a specially made github page.\nIt should also be noted that some of the hyperlinks at the top of the page will not work because they point to existing web locations.",
     "crumbs": [
       "⚙️ MiMo App",
       "👩🏽‍💻 Techie stuff",
@@ -168,11 +168,11 @@
     ]
   },
   {
-    "objectID": "making_copies.html#alternative-urls",
-    "href": "making_copies.html#alternative-urls",
+    "objectID": "making_copies.html#running-locally-as-a-progressive-web-app",
+    "href": "making_copies.html#running-locally-as-a-progressive-web-app",
     "title": "Making copies of the app",
     "section": "",
-    "text": "Posit provides access to a service called ShinyLive which lets you run web apps via web assembly. This means you don’t need to pay for a server. To access the web app via ShinyLive go to\n⚙️ MiMo app for the web app, and 📈 MiMo norms for the norms app.\nNB I am trying not to overload this wonderful free service, but it’s always there as a backup in case anything goes wrong with the GitHub websites.",
+    "text": "This is by far the neatest and most user-friendly way to make a local copy of the app. Your browser saves the app as a web page. However, bear in mind, that because an online service is used for part-of-speech tagging, your computer will need to be connected to the internet for it to work.\nBelow are instructions on how to create “Progressive Web Apps” in the most widely-used browsers. If you use a different browser, a quick internet search, or query to a large language model, will provide you with instructions.\nChrome (Windows/Mac/Linux)\n\nVisit mimolanguageanalysis.uk\nClick the menu icon (⋮) in the top-right corner\nSelect “Install MiMo Language Analysis…” or “Save and Share” → “Install page as app”\nClick Install in the popup\n\nThe app will open in a new window and add an icon to your desktop/applications\nEdge (Windows/Mac)\n\nVisit mimolanguageanalysis.uk\nClick the menu icon (⋯) in the top-right corner\nSelect “Apps” → “Install this site as an app”\nClick Install in the popup\n\nThe app will appear in your Start menu (Windows) or Applications folder (Mac)\nSafari (Mac/iOS)\nSafari doesn’t support PWA installation the same way, but you can create a home screen shortcut:\nOn Mac:\n\nVisit mimolanguageanalysis.uk\nClick File → “Add to Dock”\n\nThe site will appear as an app in your Dock\nOn iPhone/iPad:\n\nVisit mimolanguageanalysis.uk in Safari\nTap the Share button (square with arrow)\nScroll down and tap “Add to Home Screen”\nTap Add\nThe app icon will appear on your home screen\n\nFirefox\nFirefox has limited PWA support:\nWindows: No PWA installation available—just bookmark the site Android: Menu (⋮) → “Install”",
     "crumbs": [
       "⚙️ MiMo App",
       "👩🏽‍💻 Techie stuff",
@@ -180,23 +180,11 @@
     ]
   },
   {
-    "objectID": "making_copies.html#running-offline",
-    "href": "making_copies.html#running-offline",
+    "objectID": "making_copies.html#running-the-r-code-locally",
+    "href": "making_copies.html#running-the-r-code-locally",
     "title": "Making copies of the app",
     "section": "",
-    "text": "Firstly, you can download the app.R file from github, and just run it. Before you do so, you will need to install a variety of packages using the following commands;\n\nFor the MiMo app\n\nrequiredpackages &lt;- c('shiny', 'DT', 'dplyr',\n'stringr', 'udpipe' 'textcat', 'zoo',\n'koRpus', 'koRpus.lang.en', 'colourpicker')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\n\nFor the MiMo norms\n\nrequiredpackages &lt;- c('shiny', 'ggplot2', 'dplyr', 'zoo')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\nNote that if you do this you will still need to have your computer connected to the internet this is because (a) the MiMo app needs to download the Universal Dependency grammar (b) the MiMo app reads the normative data from a specially made github page.\nIt should also be noted that some of the hyperlinks at the top of the page will not work because they point to existing web locations.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "👩🏽‍💻 Techie stuff",
-      "Making copies of the app"
-    ]
-  },
-  {
-    "objectID": "making_copies.html#creating-your-own-copy-of-the-app-on-github-pages",
-    "href": "making_copies.html#creating-your-own-copy-of-the-app-on-github-pages",
-    "title": "Making copies of the app",
-    "section": "",
-    "text": "This is a good option if you want to absolutely ensure that there are no bandwidth issues. To do this you just need to clone the repo, and set it up using github pages. An LLM such as ChatGPT or Claude will give you advice on how to do this.",
+    "text": "If you are familiar with the R environment, you can download the app.R files from github, and just run them.\nThe URL for the the MiMo app is:\nhttps://github.com/nickriches/MiMoShinyLive\nand the URL for the Norms is:\nhttps://github.com/nickriches/MiMoShinyLiveNorms\nIn order for the apps to run, you will need to install a variety of packages. The following code automatically does this:\n\nFor the MiMo app\n\nrequiredpackages &lt;- c('shiny', 'DT', 'dplyr',\n'stringr', 'udpipe' 'textcat', 'zoo',\n'koRpus', 'koRpus.lang.en', 'colourpicker')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\n\nFor the MiMo norms\n\nrequiredpackages &lt;- c('shiny', 'ggplot2', 'dplyr', 'zoo')\n\ninstall_load &lt;- function(packages){\n     for (p in packages) {\n          if (p %in% rownames(installed.packages())) {\n               library(p, character.only=TRUE)\n          } else {\n               install.packages(p)\n               library(p,character.only = TRUE)\n          }\n     }\n}\n\ninstall_load(requiredpackages)\n\nNote that if you do this you will still need to have your computer connected to the internet this is because (a) the MiMo app needs to download the Universal Dependency grammar (b) the MiMo app reads the normative data from a specially made github page.\nIt should also be noted that some of the hyperlinks at the top of the page will not work because they point to existing web locations.",
     "crumbs": [
       "⚙️ MiMo App",
       "👩🏽‍💻 Techie stuff",
@@ -288,227 +276,30 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "How is MiMo different to other apps?",
+    "objectID": "posit_shiny_live_service.html",
+    "href": "posit_shiny_live_service.html",
+    "title": "Using a backup URL",
     "section": "",
-    "text": "MiMo logo",
+    "text": "Using a backup URL\nPosit provides a hosted service which allows you to run a serverless ShinyLive web app. It’s free to use, but should only be used in case the main MiMo website is affected. Access this service follow this link: ⚙️ MiMo app",
     "crumbs": [
       "⚙️ MiMo App",
-      "🧱 Basics",
-      "Intro"
+      "👩🏽‍💻 Techie stuff",
+      "Using a backup URL"
     ]
   },
   {
-    "objectID": "index.html#finding-the-sweet-spot",
-    "href": "index.html#finding-the-sweet-spot",
-    "title": "How is MiMo different to other apps?",
-    "section": "Finding “the sweet spot”",
-    "text": "Finding “the sweet spot”\nThere are a wide range of language analysis apps designed for child language and clinical data, including CLAN, SALT and SUGAR. However, none of these hits the 🍰 sweet spot between power and usability. CLAN is an impressive app, but difficult to learn, and for this reason is used mainly by the research community. SUGAR is a quick and simple system designed for Speech and Language Therapists, but the therapist still has to do some work to calculate metrics such as MLU, and code target structures. With MiMo the plan is to “get the best of both worlds” by combining the ease and simplicity of SUGAR with the power and flexibility CLAN.\nThe name MiMo describes the philosophy of the app. “Mi” refers to minimal inputs. In other words, the app is easy to use, and requires little training. “Mo” refers to maximal outputs. This refers to the rich data produced by the app, including 🌈 coloured word classes, and 📉 graphs of norms.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🧱 Basics",
-      "Intro"
-    ]
-  },
-  {
-    "objectID": "index.html#making-language-analysis-fun",
-    "href": "index.html#making-language-analysis-fun",
-    "title": "How is MiMo different to other apps?",
-    "section": "Making language analysis fun 😁!",
-    "text": "Making language analysis fun 😁!\nMany apps for language analysis are quite mechanical in the way they work. You feed text in, and they produce a range of numerical metrics. There is little room for intellectual curiosity or intuition.\nMiMo, buy contrast, allows the user to explore their data. You can quickly and easily search for particular word classes, or grammatical phenomena. You can quickly identify the longer and more complex structures that a child produces. You can sort alphabetically to find rote-learned patterns that an individual is particularly dependent on. And these are just some of the things you can do!",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🧱 Basics",
-      "Intro"
-    ]
-  },
-  {
-    "objectID": "languages.html",
-    "href": "languages.html",
-    "title": "Automatic language detection",
+    "objectID": "backups.html",
+    "href": "backups.html",
+    "title": "Backups",
     "section": "",
-    "text": "Automatic language detection\nOnce you have entered some text, MiMo automatically tries to detect the language. It needs to do this so it can ‘parse’ the text. This involves analysing its structure, and assigning part-of-speech tags. To detect the language, it uses an algorithm which prioritises speed over accuracy. The more text you input the more accurate the analysis.\n\n\n\nHow to check your language\n\n\nFor short fragments of text, it may get things spectacularly wrong. It sometimes analyses English as Middle Frisian! If this happens, all you have to do is click Select another language specify the language in the textbox as shown below.\n\n\n\nHow to select your own language\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou’ll note that you also have the option to select a specific grammar from the Universal Dependencies framework. There are a number of different grammars for each language. I am not sure why anyone would wish to do this, as the default grammar is often chosen for good reasons. But it’s always good to have options!\n\n\n\n\nWhat languages can MiMo analyse?\nMiMo uses the Universal Dependencies infrastructure to analyse text. This is partly funded by Google. Once the appropriate language is detected, MiMo downloads the right Universal Dependency grammar. Grammars are available for 65 mainly European languages (some non-living), which constitute only a small minority of the world’s language. These are listed in the manual for the R udpipe library. This list is reproduced in a simplified format below;\n\nAfrikaans, Ancient Greek, Arabic, Armenian, Basque, Belarusian, Bulgarian, Buryat, Catalan, Chinese (variety not specified), Classical Chinese, Coptic, Croatian, Czech, Danish, Dutch-alpino, English, Estonian, Finnish, French, Galician, German, Greek, Hebrew, Hindi, Hungarian, Indonesian”, Irish, Italian, Japanese, Kazakh, Korean, Kurmanji, Latin, Latvian, Lithuanian, Maltese, Marathi, North Sami, Norwegian, Old church Slavonic, Old French, Old Russian, Persian, Polish, Portuguese, Romanian, Russian, Sanskrit, Scottish Gaelic, Serbian, “slovak-snk”, Slovenian, Spanish, Swedish, Tamil, Telugu, Turkish, Ukrainian, Upper Sorbian, Urdu, Uyghur, Veitnamese, Wolof\n\nI have only trialled the app with the major European languages, and I am not sure how it will work with languages which do not use a Roman alphabet. Do give me feedback on this!\n\n\n\n\n\n\nNote\n\n\n\nIn future I may provide an option to use Large Language Models, e.g. chatGPT and Claude, to do the Part-of-Speech tagging. This would be great for languages which are not covered by the Universal Dependencies framework. However, this would involve quite a lot of re-engineering, so I have put it on the back-burner.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🧱 Basics",
-      "Automatic language detection"
-    ]
-  },
-  {
-    "objectID": "filtering.html",
-    "href": "filtering.html",
-    "title": "Filtering",
-    "section": "",
-    "text": "When you filter the table it will show only rows where a particular search string occurs.\n\n\n\nHere is a diagram showing the main search filters in MiMo:\n\n\n\nDiagram of different search filters in MiMo\n\n\n\n\nThe filter box on the top right is called the universal search filter as it is possible to enter a wide variety of search terms (described below).\n\n\n\nThe box on the top is the speaker filter designed to select specific speakers. We can use this to focus on the language of a particular individual. For example, in transcripts of child speech, there are a lot of adult utterances and relatively few child utterances. Filtering out the adult utterances can help the researcher or therapist to better analyse the child’s linguistic data.\n\n\n\nThese are not visible when the app starts up, but may be shown by clicking the Show column filters button.\n\n\n\nIf you click on either the universal search filter, or the speaker filter, they will provide a series of options. This is called autosuggest. As you type, the list of options narrows. For example, if you type has in the universal search box it will show you a wide range of possible grammatical features, including word classes. If you type hasP the list will narrow to show you hasPrep (has Preposition), and hasPron (has Pronoun). To select either of these just (a) select the term with the Down Arrow, (b) select the term by clicking on it, (c) continue typing.\nBelow is a screenshot of the autosuggest prompts you will see if you type the word verb.\n\n\n\nScreen of autosuggest capabilities\n\n\nTo select one of the autosuggestions just (a) type until only one word remains, and then press enter, or (b) moved the cursor down to select one of the autosuggestions and then press enter. The process is show in the videos below.\n\n\n\n\nBelow is a video showing how to search for child utterances (corresponding to the speaker CHI:) which contain an auxiliary (using the hasAux search in the universal search filter)\n\nNote that if multiple search terms are added to the universal search box, OR logic is applied. So if you search for hasAux and isInterrogative it will bring up any sentence with either an auxiliary verb, interrogative sentence form, or both.\nThe videos below show how to use AND logic. In the first video, an and statement is used in the universal search filter to find sentences where the auxiliary verb is can. Note how we use the & symbol, and place this in front of the item we are searching for (can).\n\nA much simpler alternative is to unhide the column filters, and use these to search for the specific word;\n\n\n\n\nThe following search terms are shown if you click in the Universal Search Box;\n\n\nThis is mainly used to identify utterances containing particular word classes. Examples are\n\n\nhasNoun, hasDet (Determiner), hasPron (Pronoun), hasPrep (Preposition), hasVerb (Main Verb), hasAux (Auxiliary Verb), hasAdv (Adverb), hasAdj (Adjective), hasCconj (Coordinating Conjunction), hasSconj (Subordinating Conjunction), hasNeg (negative particle), hasNum (numeral)\n\n\n\nhasPastTense,hasPresTense (present tense), hasCopula (copula = verb to be used as a main verb), hasProgForm / hasPresParticiple (progressive form), hasPerfForm / hasPerfParticiple (perfective form), and hasInfinitive.\nNB the terms “present participle” and “past participle” are misnomers as they do not mark present or past tense, but as they are so widely used I have included these as an option.\n\n\n\nhas2clauses, has3clauses, has4clauses, has5clauses, hasMultipleClauses\nTo determine the number of clauses MiMo counts the number of finite verbs\n\n\n\nhasPassive and hasRelativePronoun\n\n\n\nhasComment, hasTag\nIf you wish to search for a tag containing particular content type the following hasTagContentsOfTagMinusSpaces. So if you have created a tag called [Optional Infinitive Error], to find utterances containing this tag you search for hasTagOptionalInfinitiveError. Note the use of “camel case”. This makes the search string more readable, but it will work without the camel case.\n\n\n\nIt is possible to search for conversational turns of varying lengths as follows;\nturn1 identifies utterances in turns consisting of a single utterance. turn2 identifies utterances in turns consisting of two utterances. Other search strings are turn3 turn4 turn5 turn5plus. The latter identifies utterances which belong to conversational turns which are 5 or more utterances long.\n\n\n\n\nThese are used to identify Speech Acts;\nisDeclarative, isInterrogative, isQuestion, isImperative, isExclamative\nDon’t forget, there is a convention to use a single exclamation mark for a directive, and a double exclamation mark for an exclamative.\n\n\n\nAs shown in the second video above, you can type individual words in the Universal Search Box. If you do this, the drop down list will get smaller and smaller until there are no options, then you will be invited to select the word you have entered.\n\n\n\n\n\n\nWarning\n\n\n\nThe filter at the top right of the page operates primarily on the columns which lie to the right of the solid line. If you really wish to see how the filtering works, you can scroll to the right. But this is not recommended unless you feel super curious.\n\n\n\nImage warning you not to look at data on the right of the solid line\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis is an advanced feature and unless you are feeling super-confident you are not encouraged to do this!\n\n\nAs mentioned above, if you click Show column filters at the top of the page, filters will appear at the top of each column. This allows for more finegrained sorting. This feature is shown in the third video above.\nYou may, if you are feeling brave, scroll to the right to see the hidden columns, and try to filter on these. Column X shows very finegrained grammatical information including syntactic functions (Subject, Object), and Agreement phenomena. You may wish to conduct some searches on this column.\n\n\n\nFiltering is a powerful tool to help you explore your data in an intuitive and creative fashion. Here are just some of the things you can look for, which will give you a good indication of your child / client’s language level\n\n\nYou can search for infinitives using the search string hasInfinitive. This is an extremely useful search because the use of an infinitive where a tensed form is required is a common error in child language, and also in adult acquired language difficulties. This is sometimes described as an optional infinitive error.\n\n\n\nYou can find auxiliary verbs by using hasAux. Questions and negatives also frequently contain auxiliaries, and you can search for these using isInterrogative and hasNegative.\nYoung children struggle to use auxiliaries correctly. In particular, they have difficulties correctly using auxiliaries to make questions. A search for auxiliaries or questions will identify such difficulties\n\n\n\nYou can find these using hasMultipleClauses.\nBeing able to link clauses together using conjunctions is a relatively advanced skill. This search enables you to explore this ability. hasSconj will also identify sentences which contain subordinating conjunctions.\n\n\n\nIn English, children take a long time to master negatives. Often their negative utterances will lack do-support, e.g. she no like it.\n\n\n\nCase-marking errors on pronouns are an important characteristic of the speech of young children, e.g. Me go there. A search for pronouns will help to identify this common error pattern.\n\n\n\nYou can search for the passive using hasPassive and for relative clauses using hasRelativePronoun",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "filtering.html#what-is-filtering",
-    "href": "filtering.html#what-is-filtering",
-    "title": "Filtering",
-    "section": "",
-    "text": "When you filter the table it will show only rows where a particular search string occurs.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "filtering.html#how-do-you-filter",
-    "href": "filtering.html#how-do-you-filter",
-    "title": "Filtering",
-    "section": "",
-    "text": "Here is a diagram showing the main search filters in MiMo:\n\n\n\nDiagram of different search filters in MiMo\n\n\n\n\nThe filter box on the top right is called the universal search filter as it is possible to enter a wide variety of search terms (described below).\n\n\n\nThe box on the top is the speaker filter designed to select specific speakers. We can use this to focus on the language of a particular individual. For example, in transcripts of child speech, there are a lot of adult utterances and relatively few child utterances. Filtering out the adult utterances can help the researcher or therapist to better analyse the child’s linguistic data.\n\n\n\nThese are not visible when the app starts up, but may be shown by clicking the Show column filters button.\n\n\n\nIf you click on either the universal search filter, or the speaker filter, they will provide a series of options. This is called autosuggest. As you type, the list of options narrows. For example, if you type has in the universal search box it will show you a wide range of possible grammatical features, including word classes. If you type hasP the list will narrow to show you hasPrep (has Preposition), and hasPron (has Pronoun). To select either of these just (a) select the term with the Down Arrow, (b) select the term by clicking on it, (c) continue typing.\nBelow is a screenshot of the autosuggest prompts you will see if you type the word verb.\n\n\n\nScreen of autosuggest capabilities\n\n\nTo select one of the autosuggestions just (a) type until only one word remains, and then press enter, or (b) moved the cursor down to select one of the autosuggestions and then press enter. The process is show in the videos below.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "filtering.html#demo-videos",
-    "href": "filtering.html#demo-videos",
-    "title": "Filtering",
-    "section": "",
-    "text": "Below is a video showing how to search for child utterances (corresponding to the speaker CHI:) which contain an auxiliary (using the hasAux search in the universal search filter)\n\nNote that if multiple search terms are added to the universal search box, OR logic is applied. So if you search for hasAux and isInterrogative it will bring up any sentence with either an auxiliary verb, interrogative sentence form, or both.\nThe videos below show how to use AND logic. In the first video, an and statement is used in the universal search filter to find sentences where the auxiliary verb is can. Note how we use the & symbol, and place this in front of the item we are searching for (can).\n\nA much simpler alternative is to unhide the column filters, and use these to search for the specific word;",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "filtering.html#built-in-universal-search-filters",
-    "href": "filtering.html#built-in-universal-search-filters",
-    "title": "Filtering",
-    "section": "",
-    "text": "The following search terms are shown if you click in the Universal Search Box;\n\n\nThis is mainly used to identify utterances containing particular word classes. Examples are\n\n\nhasNoun, hasDet (Determiner), hasPron (Pronoun), hasPrep (Preposition), hasVerb (Main Verb), hasAux (Auxiliary Verb), hasAdv (Adverb), hasAdj (Adjective), hasCconj (Coordinating Conjunction), hasSconj (Subordinating Conjunction), hasNeg (negative particle), hasNum (numeral)\n\n\n\nhasPastTense,hasPresTense (present tense), hasCopula (copula = verb to be used as a main verb), hasProgForm / hasPresParticiple (progressive form), hasPerfForm / hasPerfParticiple (perfective form), and hasInfinitive.\nNB the terms “present participle” and “past participle” are misnomers as they do not mark present or past tense, but as they are so widely used I have included these as an option.\n\n\n\nhas2clauses, has3clauses, has4clauses, has5clauses, hasMultipleClauses\nTo determine the number of clauses MiMo counts the number of finite verbs\n\n\n\nhasPassive and hasRelativePronoun\n\n\n\nhasComment, hasTag\nIf you wish to search for a tag containing particular content type the following hasTagContentsOfTagMinusSpaces. So if you have created a tag called [Optional Infinitive Error], to find utterances containing this tag you search for hasTagOptionalInfinitiveError. Note the use of “camel case”. This makes the search string more readable, but it will work without the camel case.\n\n\n\nIt is possible to search for conversational turns of varying lengths as follows;\nturn1 identifies utterances in turns consisting of a single utterance. turn2 identifies utterances in turns consisting of two utterances. Other search strings are turn3 turn4 turn5 turn5plus. The latter identifies utterances which belong to conversational turns which are 5 or more utterances long.\n\n\n\n\nThese are used to identify Speech Acts;\nisDeclarative, isInterrogative, isQuestion, isImperative, isExclamative\nDon’t forget, there is a convention to use a single exclamation mark for a directive, and a double exclamation mark for an exclamative.\n\n\n\nAs shown in the second video above, you can type individual words in the Universal Search Box. If you do this, the drop down list will get smaller and smaller until there are no options, then you will be invited to select the word you have entered.\n\n\n\n\n\n\nWarning\n\n\n\nThe filter at the top right of the page operates primarily on the columns which lie to the right of the solid line. If you really wish to see how the filtering works, you can scroll to the right. But this is not recommended unless you feel super curious.\n\n\n\nImage warning you not to look at data on the right of the solid line",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "filtering.html#filtering-by-individual-columns",
-    "href": "filtering.html#filtering-by-individual-columns",
-    "title": "Filtering",
-    "section": "",
-    "text": "Warning\n\n\n\nThis is an advanced feature and unless you are feeling super-confident you are not encouraged to do this!\n\n\nAs mentioned above, if you click Show column filters at the top of the page, filters will appear at the top of each column. This allows for more finegrained sorting. This feature is shown in the third video above.\nYou may, if you are feeling brave, scroll to the right to see the hidden columns, and try to filter on these. Column X shows very finegrained grammatical information including syntactic functions (Subject, Object), and Agreement phenomena. You may wish to conduct some searches on this column.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "filtering.html#tips-on-using-filtering",
-    "href": "filtering.html#tips-on-using-filtering",
-    "title": "Filtering",
-    "section": "",
-    "text": "Filtering is a powerful tool to help you explore your data in an intuitive and creative fashion. Here are just some of the things you can look for, which will give you a good indication of your child / client’s language level\n\n\nYou can search for infinitives using the search string hasInfinitive. This is an extremely useful search because the use of an infinitive where a tensed form is required is a common error in child language, and also in adult acquired language difficulties. This is sometimes described as an optional infinitive error.\n\n\n\nYou can find auxiliary verbs by using hasAux. Questions and negatives also frequently contain auxiliaries, and you can search for these using isInterrogative and hasNegative.\nYoung children struggle to use auxiliaries correctly. In particular, they have difficulties correctly using auxiliaries to make questions. A search for auxiliaries or questions will identify such difficulties\n\n\n\nYou can find these using hasMultipleClauses.\nBeing able to link clauses together using conjunctions is a relatively advanced skill. This search enables you to explore this ability. hasSconj will also identify sentences which contain subordinating conjunctions.\n\n\n\nIn English, children take a long time to master negatives. Often their negative utterances will lack do-support, e.g. she no like it.\n\n\n\nCase-marking errors on pronouns are an important characteristic of the speech of young children, e.g. Me go there. A search for pronouns will help to identify this common error pattern.\n\n\n\nYou can search for the passive using hasPassive and for relative clauses using hasRelativePronoun",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Filtering"
-    ]
-  },
-  {
-    "objectID": "sorting.html",
-    "href": "sorting.html",
-    "title": "Sorting",
-    "section": "",
-    "text": "MiMo provides three buttons to sort columns\n\nSort by order\nSort by length\nSort alphabetically\n\n\n\n\nImage of sort buttons\n\n\n\n\n\nThe Sort by order button merely provides you with a way to restore the order of the utterances to the original chronological order.\n\n\n\nWith this, you can pull the longest utterances towards the top of a table. This is exceptionally useful because the longest utterances of a participant may be particularly informative about their language abilities. For example, numerous studies have found close associations between an MLU (Mean Length of Utterance) derived from the MacArthur Communicative Development Inventory (CDI), which is based on parental report of the child’s three longest utterances, and other metrics of language ability, e.g. an MLU derived from a large sample (Devescovi et al,. 2005), or measures of grammatical complexity based on MacArthur CDI questionnaire data (Fenson et al. 1994; Ezeizbarrena & Fernandez, 2018).\nThere are two reasons why investigating the longest utterances produced by a participant are particularly informative about their language abilities.\nFirstly, in order to produce longer utterances children need to have mastered a variety of relatively advanced syntactic building blocks including using conjunctions to combine clauses, using prepositions, realising complex argument structures, and elaboration within phrases, e.g. adding adjectives to Noun Phrases, or adverbs to Verb Phrases. The longer utterances demonstrate a child’s use of such building blocks.\nIn addition, many of the shorter utterances are artificially short as they are influenced by discourse factors. For example, if the caregiver asks a “Yes/No” question, e.g. Did you have a good time? answering with a single word Yes is an appropriate response.\nBy focusing on the child’s longest utterances we can be sure that (a) they provide a full picture of the building blocks they have at their disposal, and (b) their length has not been influenced by discourse factors.\n\n\nThough for simplicity’s sake, I have described this as an “alphabetical sort”, it does more than just sort alphabetically. It sorts firstly by initial word class, and then alphabetically. This is exceptionally useful means of determining whether the child is dependent on any sentence-initial rote-learned formula.\nBelow, data from the CHILDES Thomas corpus has been sorted “alphabetically”. “Thomas” is aged 2 years and 6 months at the time the data were collected. We can see that alphabetical sorting can be used to identify frequent rote-learned utterances, e.g. All done now, or slot-and-frame patterns, e.g. Another X.\n\n\n\nAlphabetical Sorting\n\n\n\n\n\n\nAny column in the spreadsheet may be sorted by pressing the sort symbol at the top of each column. However, the buttons make this process far easier.\n\n\n\nSorting without buttons",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Sorting"
-    ]
-  },
-  {
-    "objectID": "sorting.html#ways-to-sort-columns-using-buttons",
-    "href": "sorting.html#ways-to-sort-columns-using-buttons",
-    "title": "Sorting",
-    "section": "",
-    "text": "MiMo provides three buttons to sort columns\n\nSort by order\nSort by length\nSort alphabetically\n\n\n\n\nImage of sort buttons",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Sorting"
-    ]
-  },
-  {
-    "objectID": "sorting.html#sorting-by-order",
-    "href": "sorting.html#sorting-by-order",
-    "title": "Sorting",
-    "section": "",
-    "text": "The Sort by order button merely provides you with a way to restore the order of the utterances to the original chronological order.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Sorting"
-    ]
-  },
-  {
-    "objectID": "sorting.html#sort-by-length",
-    "href": "sorting.html#sort-by-length",
-    "title": "Sorting",
-    "section": "",
-    "text": "With this, you can pull the longest utterances towards the top of a table. This is exceptionally useful because the longest utterances of a participant may be particularly informative about their language abilities. For example, numerous studies have found close associations between an MLU (Mean Length of Utterance) derived from the MacArthur Communicative Development Inventory (CDI), which is based on parental report of the child’s three longest utterances, and other metrics of language ability, e.g. an MLU derived from a large sample (Devescovi et al,. 2005), or measures of grammatical complexity based on MacArthur CDI questionnaire data (Fenson et al. 1994; Ezeizbarrena & Fernandez, 2018).\nThere are two reasons why investigating the longest utterances produced by a participant are particularly informative about their language abilities.\nFirstly, in order to produce longer utterances children need to have mastered a variety of relatively advanced syntactic building blocks including using conjunctions to combine clauses, using prepositions, realising complex argument structures, and elaboration within phrases, e.g. adding adjectives to Noun Phrases, or adverbs to Verb Phrases. The longer utterances demonstrate a child’s use of such building blocks.\nIn addition, many of the shorter utterances are artificially short as they are influenced by discourse factors. For example, if the caregiver asks a “Yes/No” question, e.g. Did you have a good time? answering with a single word Yes is an appropriate response.\nBy focusing on the child’s longest utterances we can be sure that (a) they provide a full picture of the building blocks they have at their disposal, and (b) their length has not been influenced by discourse factors.\n\n\nThough for simplicity’s sake, I have described this as an “alphabetical sort”, it does more than just sort alphabetically. It sorts firstly by initial word class, and then alphabetically. This is exceptionally useful means of determining whether the child is dependent on any sentence-initial rote-learned formula.\nBelow, data from the CHILDES Thomas corpus has been sorted “alphabetically”. “Thomas” is aged 2 years and 6 months at the time the data were collected. We can see that alphabetical sorting can be used to identify frequent rote-learned utterances, e.g. All done now, or slot-and-frame patterns, e.g. Another X.\n\n\n\nAlphabetical Sorting",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Sorting"
-    ]
-  },
-  {
-    "objectID": "sorting.html#sorting-without-buttons",
-    "href": "sorting.html#sorting-without-buttons",
-    "title": "Sorting",
-    "section": "",
-    "text": "Any column in the spreadsheet may be sorted by pressing the sort symbol at the top of each column. However, the buttons make this process far easier.\n\n\n\nSorting without buttons",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🔎 Exploring your data",
-      "Sorting"
-    ]
-  },
-  {
-    "objectID": "Colour_highlights.html",
-    "href": "Colour_highlights.html",
-    "title": "Colour highlights",
-    "section": "",
-    "text": "If MiMo is able to access a grammar for your language it will colour your text using different colours for different wordclasses\n\n\n\nImage showing coloured text\n\n\nWhen you hover over the word, the word class will show in a box above the word.\n\n\n\nImage showing hover text\n\n\nThe colours are designed to be meaningful. For example, all words related to the verb, e.g. verb, adverb, auxiliary verb are highlighted various shades of red / pink. I chose a bright colour because verbs are essential to sentences. There are many languages which have sentences consisting only of a verb, but few which have sentences consisting only of a noun.\n\n\n\n\n\n\nWarning\n\n\n\nParsing is only about 95% accurate for well-formed sentences. This accuracy rate will probably fall below 95% for child language data, as fragmented and grammatically incorrect utterances pose particular difficulties for machine tagging.\nSo you will invariably come across errors.\nHowever, in my humble opinion, tagging is good enough for the purposes of the app.\n\n\n\n\nIf you do not like the beautiful colours I have chosen, you may alter them on the Colours tab. Unfortunately, changes in colour do not persist across sessions, so if you close the browser, and you still want to use your bespoke colours, you will need to redo them.\nYou can also choose sets of colours, e.g. Verb-related words only, or Linking words. This might be a useful strategy to help you focus on particular types of words. For example, difficulties with verb morphology are very common in individuals with language difficulties, so choosing to highlight verb-related words only could help you to see common error patterns.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🧱 Basics",
-      "Colour highlights"
-    ]
-  },
-  {
-    "objectID": "Colour_highlights.html#changing-the-colour-scheme",
-    "href": "Colour_highlights.html#changing-the-colour-scheme",
-    "title": "Colour highlights",
-    "section": "",
-    "text": "If you do not like the beautiful colours I have chosen, you may alter them on the Colours tab. Unfortunately, changes in colour do not persist across sessions, so if you close the browser, and you still want to use your bespoke colours, you will need to redo them.\nYou can also choose sets of colours, e.g. Verb-related words only, or Linking words. This might be a useful strategy to help you focus on particular types of words. For example, difficulties with verb morphology are very common in individuals with language difficulties, so choosing to highlight verb-related words only could help you to see common error patterns.",
-    "crumbs": [
-      "⚙️ MiMo App",
-      "🧱 Basics",
-      "Colour highlights"
-    ]
+    "text": "Backups"
   },
   {
     "objectID": "acknowledgements.html",
     "href": "acknowledgements.html",
     "title": "Acknowledgements",
     "section": "",
-    "text": "The app would not have been possible without a funded sabbatical provided by Newcastle University. I have also been encouraged and supported to use the app with successive generations of Speech and Language Therapy students, and this has helped to further refine the app. In particular I would like to thank Carol Moxam for her wisdom and encouragement, Janet Webster for supporting the roll out of the app with the students, and finally the students, for being willing and delightful guinea pigs.\n\n\n\nThe app has been hosted on Github, which is owned by Microsoft. Github generously channels some of its profits for supporting free and open source software, and the hosting of non-profit websites.\n\n\n\nThe app is designed with a range of open source technologies. It is programmed in R (R Core Team (2025). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/.), and exploits the Shiny App framework for designing web apps (Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J, Dipert A, Borges B (2024). shiny: Web Application Framework for R. doi:10.32614/CRAN.package.shiny https://doi.org/10.32614/CRAN.package.shiny, R package version 1.10.0, https://CRAN.R-project.org/package=shiny). As such, it is a testament to the power and flexibility of open source software.\n\n\n\nThe Posit Foundation is a non-profit foundation which supports the R infrastructure, and develops the RStudio and Positron apps which are used to analyse R data.\nIn particular, I would like to thank George Stagg for developing the webR / shinylive framework which has been used to run the app (Stagg, G. W., Lionel, H., & Others. (2023). webR: The statistical language R compiled to WebAssembly via Emscripten (Version 0.2.2) [Computer software]. https://github.com/r-wasm/webr, Schloerke B, Chang W, Stagg G, Aden-Buie G (2024). shinylive: Run ‘shiny’ Applications in the Browser. doi:10.32614/CRAN.package.shinylive https://doi.org/10.32614/CRAN.package.shinylive, R package version 0.3.0, https://CRAN.R-project.org/package=shinylive.). The webR / shinylive framework is instrumental to the rollout of this app as it has enabled me to share the app widely without incurring costs for running and / or maintaining a server. George also kindly helped to host the MiMo app for a number of years at Newcastle.\nI should also acknowledge the amazing Quarto scientific publishing platform which has been used to create these help pages. It’s an fantastic tool which we should all be using, both for scientific publication, and for pedagogical purposes.\n\n\n\nTalkbank / CHILDES is a platform which hosts the CLAN language analysis app, and a large number of data sets from both clinical and non-clinical populations. The norms which are used in MiMo are derived from CHILDES. In particular, I used the childesR app to bulk download child language data (Braginsky M, Sanchez A, Yurovsky D (2022). childesr: Accessing the ‘CHILDES’ Database. doi:10.32614/CRAN.package.childesr https://doi.org/10.32614/CRAN.package.childesr, R package version 0.2.3, https://CRAN.R-project.org/package=childesr). It also provides the KIDEVAL norms which can be accessed in the Norms app, a carefully selected corpus of highly-reliable data.\n\n\n\nThis is multinational project has been partly supported by Google, in addition to funding from European Research Councils (grant GX20-16819X of the Czech Science Foundation awarded to Daniel Zeman and grant 2016-01817 of the Swedish Research Council Joakim Nivre). The Universal Dependencies are used to part-of-speech tag the linguistic data.\n\n\n\nXie Y, Cheng J, Tan X (2024). DT: A Wrapper of the JavaScript Library ‘DataTables’. doi:10.32614/CRAN.package.DT https://doi.org/10.32614/CRAN.package.DT, R package version 0.33, https://CRAN.R-project.org/package=DT.\nWickham H, François R, Henry L, Müller K, Vaughan D (2023). dplyr: A Grammar of Data Manipulation. doi:10.32614/CRAN.package.dplyr https://doi.org/10.32614/CRAN.package.dplyr, R package version 1.1.4, https://CRAN.R-project.org/package=dplyr.\nWickham H (2025). stringr: Simple, Consistent Wrappers for Common String Operations. doi:10.32614/CRAN.package.stringr https://doi.org/10.32614/CRAN.package.stringr, R package version 1.5.2, https://CRAN.R-project.org/package=stringr.\nWijffels J (2023). udpipe: Tokenization, Parts of Speech Tagging, Lemmatization and Dependency Parsing with the ‘UDPipe’ ‘NLP’ Toolkit. doi:10.32614/CRAN.package.udpipe https://doi.org/10.32614/CRAN.package.udpipe, R package version 0.8.11, https://CRAN.R-project.org/package=udpipe.\nHornik K, Rauch J, Buchta C, Feinerer I (2024). textcat: N-Gram Based Text Categorization. doi:10.32614/CRAN.package.textcat https://doi.org/10.32614/CRAN.package.textcat, R package version 1.0-9, https://CRAN.R-project.org/package=textcat.\nZeileis A, Grothendieck G (2005). “zoo: S3 Infrastructure for Regular and Irregular Time Series.” Journal of Statistical Software, 14(6), 1-27. doi:10.18637/jss.v014.i06 https://doi.org/10.18637/jss.v014.i06.\nMichalke, M. (2021). koRpus: Text Analysis with Emphasis on POS Tagging, Readability, and Lexical Diversity (Version 0.13-8). Available from https://reaktanz.de/?c=hacking&s=koRpus\nAttali D (2023). colourpicker: A Colour Picker Tool for Shiny and for Selecting Colours in Plots. doi:10.32614/CRAN.package.colourpicker https://doi.org/10.32614/CRAN.package.colourpicker, R package version 1.3.0, https://CRAN.R-project.org/package=colourpicker.\n\n\n\nIn the interests of full disclosure I have used ChatGPT quite intensively in the final stages of developing the app. In particular I have used it to write javascript routines, and it has also been super-helpful for getting the app to run via webR / web assembly.",
+    "text": "The app would not have been possible without a funded sabbatical provided by Newcastle University. I have also been encouraged and supported to use the app with successive generations of Speech and Language Therapy students, and this has helped to further refine the app. In particular I would like to thank Carol Moxam for her wisdom and encouragement, Janet Webster for supporting the roll out of the app with the students, and finally the students, for being willing and delightful guinea pigs.\n\n\n\nThe app has been hosted on Github, which is owned by Microsoft. Github generously channels some of its profits for supporting free and open source software, and the hosting of non-profit websites.\n\n\n\nThe app is designed with a range of open source technologies. It is programmed in R (R Core Team (2025). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/.), and exploits the Shiny App framework for designing web apps (Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J, Dipert A, Borges B (2024). shiny: Web Application Framework for R. doi:10.32614/CRAN.package.shiny https://doi.org/10.32614/CRAN.package.shiny, R package version 1.10.0, https://CRAN.R-project.org/package=shiny). As such, it is a testament to the power and flexibility of open source software.\n\n\n\nThe Posit Foundation is a non-profit foundation which supports the R infrastructure, and develops the RStudio and Positron apps which are used to analyse R data.\nIn particular, I would like to thank George Stagg for developing the webR / shinylive framework which has been used to run the app (Stagg, G. W., Lionel, H., & Others. (2023). webR: The statistical language R compiled to WebAssembly via Emscripten (Version 0.2.2) [Computer software]. https://github.com/r-wasm/webr, Schloerke B, Chang W, Stagg G, Aden-Buie G (2024). shinylive: Run ‘shiny’ Applications in the Browser. doi:10.32614/CRAN.package.shinylive https://doi.org/10.32614/CRAN.package.shinylive, R package version 0.3.0, https://CRAN.R-project.org/package=shinylive.). The webR / shinylive framework is instrumental to the rollout of this app as it has enabled me to share the app widely without incurring costs for running and / or maintaining a server. George also kindly helped to host the MiMo app for a number of years at Newcastle.\nI should also acknowledge the amazing Quarto scientific publishing platform which has been used to create these help pages. It’s an fantastic tool which we should all be using, both for scientific publication, and for pedagogical purposes.\n\n\n\nTalkbank / CHILDES is a platform which hosts the CLAN language analysis app, and a large number of data sets from both clinical and non-clinical populations. The norms which are used in MiMo are derived from CHILDES. In particular, I used the childesR app to bulk download child language data (Braginsky M, Sanchez A, Yurovsky D (2022). childesr: Accessing the ‘CHILDES’ Database. doi:10.32614/CRAN.package.childesr https://doi.org/10.32614/CRAN.package.childesr, R package version 0.2.3, https://CRAN.R-project.org/package=childesr). It also provides the KIDEVAL norms which can be accessed in the Norms app, a carefully selected corpus of highly-reliable data.\n\n\n\nThis is multinational project has been partly supported by Google, in addition to funding from European Research Councils (grant GX20-16819X of the Czech Science Foundation awarded to Daniel Zeman and grant 2016-01817 of the Swedish Research Council Joakim Nivre). The Universal Dependencies are used to part-of-speech tag the linguistic data.\n\n\n\nXie Y, Cheng J, Tan X (2024). DT: A Wrapper of the JavaScript Library ‘DataTables’. doi:10.32614/CRAN.package.DT https://doi.org/10.32614/CRAN.package.DT, R package version 0.33, https://CRAN.R-project.org/package=DT.\nWickham H, François R, Henry L, Müller K, Vaughan D (2023). dplyr: A Grammar of Data Manipulation. doi:10.32614/CRAN.package.dplyr https://doi.org/10.32614/CRAN.package.dplyr, R package version 1.1.4, https://CRAN.R-project.org/package=dplyr.\nWickham H (2025). stringr: Simple, Consistent Wrappers for Common String Operations. doi:10.32614/CRAN.package.stringr https://doi.org/10.32614/CRAN.package.stringr, R package version 1.5.2, https://CRAN.R-project.org/package=stringr.\nWijffels J (2023). udpipe: Tokenization, Parts of Speech Tagging, Lemmatization and Dependency Parsing with the ‘UDPipe’ ‘NLP’ Toolkit. doi:10.32614/CRAN.package.udpipe https://doi.org/10.32614/CRAN.package.udpipe, R package version 0.8.11, https://CRAN.R-project.org/package=udpipe.\nHornik K, Rauch J, Buchta C, Feinerer I (2024). textcat: N-Gram Based Text Categorization. doi:10.32614/CRAN.package.textcat https://doi.org/10.32614/CRAN.package.textcat, R package version 1.0-9, https://CRAN.R-project.org/package=textcat.\nZeileis A, Grothendieck G (2005). “zoo: S3 Infrastructure for Regular and Irregular Time Series.” Journal of Statistical Software, 14(6), 1-27. doi:10.18637/jss.v014.i06 https://doi.org/10.18637/jss.v014.i06.\nMichalke, M. (2021). koRpus: Text Analysis with Emphasis on POS Tagging, Readability, and Lexical Diversity (Version 0.13-8). Available from https://reaktanz.de/?c=hacking&s=koRpus\nAttali D (2023). colourpicker: A Colour Picker Tool for Shiny and for Selecting Colours in Plots. doi:10.32614/CRAN.package.colourpicker https://doi.org/10.32614/CRAN.package.colourpicker, R package version 1.3.0, https://CRAN.R-project.org/package=colourpicker.\n\n\n\nIn the interests of full disclosure I have used ChatGPT and Claude quite intensively in the final stages of developing the app. In particular I have used them to write javascript routines, and they have also been super-helpful for getting the app to run via webR / web assembly.",
     "crumbs": [
       "⚙️ MiMo App",
       "🙏🏽 Acknowledgements",
@@ -600,11 +391,11 @@
     ]
   },
   {
-    "objectID": "acknowledgements.html#chatgpt",
-    "href": "acknowledgements.html#chatgpt",
+    "objectID": "acknowledgements.html#large-language-models",
+    "href": "acknowledgements.html#large-language-models",
     "title": "Acknowledgements",
     "section": "",
-    "text": "In the interests of full disclosure I have used ChatGPT quite intensively in the final stages of developing the app. In particular I have used it to write javascript routines, and it has also been super-helpful for getting the app to run via webR / web assembly.",
+    "text": "In the interests of full disclosure I have used ChatGPT and Claude quite intensively in the final stages of developing the app. In particular I have used them to write javascript routines, and they have also been super-helpful for getting the app to run via webR / web assembly.",
     "crumbs": [
       "⚙️ MiMo App",
       "🙏🏽 Acknowledgements",
@@ -612,11 +403,220 @@
     ]
   },
   {
-    "objectID": "backups.html",
-    "href": "backups.html",
-    "title": "Backups",
+    "objectID": "Colour_highlights.html",
+    "href": "Colour_highlights.html",
+    "title": "Colour highlights",
     "section": "",
-    "text": "Backups"
+    "text": "If MiMo is able to access a grammar for your language it will colour your text using different colours for different wordclasses\n\n\n\nImage showing coloured text\n\n\nWhen you hover over the word, the word class will show in a box above the word.\n\n\n\nImage showing hover text\n\n\nThe colours are designed to be meaningful. For example, all words related to the verb, e.g. verb, adverb, auxiliary verb are highlighted various shades of red / pink. I chose a bright colour because verbs are essential to sentences. There are many languages which have sentences consisting only of a verb, but few which have sentences consisting only of a noun.\n\n\n\n\n\n\nWarning\n\n\n\nParsing is only about 95% accurate for well-formed sentences. This accuracy rate will probably fall below 95% for child language data, as fragmented and grammatically incorrect utterances pose particular difficulties for machine tagging.\nSo you will invariably come across errors.\nHowever, in my humble opinion, tagging is good enough for the purposes of the app.\n\n\n\n\nIf you do not like the beautiful colours I have chosen, you may alter them on the Colours tab. Unfortunately, changes in colour do not persist across sessions, so if you close the browser, and you still want to use your bespoke colours, you will need to redo them.\nYou can also choose sets of colours, e.g. Verb-related words only, or Linking words. This might be a useful strategy to help you focus on particular types of words. For example, difficulties with verb morphology are very common in individuals with language difficulties, so choosing to highlight verb-related words only could help you to see common error patterns.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🧱 Basics",
+      "Colour highlights"
+    ]
+  },
+  {
+    "objectID": "Colour_highlights.html#changing-the-colour-scheme",
+    "href": "Colour_highlights.html#changing-the-colour-scheme",
+    "title": "Colour highlights",
+    "section": "",
+    "text": "If you do not like the beautiful colours I have chosen, you may alter them on the Colours tab. Unfortunately, changes in colour do not persist across sessions, so if you close the browser, and you still want to use your bespoke colours, you will need to redo them.\nYou can also choose sets of colours, e.g. Verb-related words only, or Linking words. This might be a useful strategy to help you focus on particular types of words. For example, difficulties with verb morphology are very common in individuals with language difficulties, so choosing to highlight verb-related words only could help you to see common error patterns.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🧱 Basics",
+      "Colour highlights"
+    ]
+  },
+  {
+    "objectID": "sorting.html",
+    "href": "sorting.html",
+    "title": "Sorting",
+    "section": "",
+    "text": "MiMo provides three buttons to sort columns\n\nSort by order\nSort by length\nSort alphabetically\n\n\n\n\nImage of sort buttons\n\n\n\n\n\nThe Sort by order button merely provides you with a way to restore the order of the utterances to the original chronological order.\n\n\n\nWith this, you can pull the longest utterances towards the top of a table. This is exceptionally useful because the longest utterances of a participant may be particularly informative about their language abilities. For example, numerous studies have found close associations between an MLU (Mean Length of Utterance) derived from the MacArthur Communicative Development Inventory (CDI), which is based on parental report of the child’s three longest utterances, and other metrics of language ability, e.g. an MLU derived from a large sample (Devescovi et al,. 2005), or measures of grammatical complexity based on MacArthur CDI questionnaire data (Fenson et al. 1994; Ezeizbarrena & Fernandez, 2018).\nThere are two reasons why investigating the longest utterances produced by a participant are particularly informative about their language abilities.\nFirstly, in order to produce longer utterances children need to have mastered a variety of relatively advanced syntactic building blocks including using conjunctions to combine clauses, using prepositions, realising complex argument structures, and elaboration within phrases, e.g. adding adjectives to Noun Phrases, or adverbs to Verb Phrases. The longer utterances demonstrate a child’s use of such building blocks.\nIn addition, many of the shorter utterances are artificially short as they are influenced by discourse factors. For example, if the caregiver asks a “Yes/No” question, e.g. Did you have a good time? answering with a single word Yes is an appropriate response.\nBy focusing on the child’s longest utterances we can be sure that (a) they provide a full picture of the building blocks they have at their disposal, and (b) their length has not been influenced by discourse factors.\n\n\nThough for simplicity’s sake, I have described this as an “alphabetical sort”, it does more than just sort alphabetically. It sorts firstly by initial word class, and then alphabetically. This is exceptionally useful means of determining whether the child is dependent on any sentence-initial rote-learned formula.\nBelow, data from the CHILDES Thomas corpus has been sorted “alphabetically”. “Thomas” is aged 2 years and 6 months at the time the data were collected. We can see that alphabetical sorting can be used to identify frequent rote-learned utterances, e.g. All done now, or slot-and-frame patterns, e.g. Another X.\n\n\n\nAlphabetical Sorting\n\n\n\n\n\n\nAny column in the spreadsheet may be sorted by pressing the sort symbol at the top of each column. However, the buttons make this process far easier.\n\n\n\nSorting without buttons",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Sorting"
+    ]
+  },
+  {
+    "objectID": "sorting.html#ways-to-sort-columns-using-buttons",
+    "href": "sorting.html#ways-to-sort-columns-using-buttons",
+    "title": "Sorting",
+    "section": "",
+    "text": "MiMo provides three buttons to sort columns\n\nSort by order\nSort by length\nSort alphabetically\n\n\n\n\nImage of sort buttons",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Sorting"
+    ]
+  },
+  {
+    "objectID": "sorting.html#sorting-by-order",
+    "href": "sorting.html#sorting-by-order",
+    "title": "Sorting",
+    "section": "",
+    "text": "The Sort by order button merely provides you with a way to restore the order of the utterances to the original chronological order.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Sorting"
+    ]
+  },
+  {
+    "objectID": "sorting.html#sort-by-length",
+    "href": "sorting.html#sort-by-length",
+    "title": "Sorting",
+    "section": "",
+    "text": "With this, you can pull the longest utterances towards the top of a table. This is exceptionally useful because the longest utterances of a participant may be particularly informative about their language abilities. For example, numerous studies have found close associations between an MLU (Mean Length of Utterance) derived from the MacArthur Communicative Development Inventory (CDI), which is based on parental report of the child’s three longest utterances, and other metrics of language ability, e.g. an MLU derived from a large sample (Devescovi et al,. 2005), or measures of grammatical complexity based on MacArthur CDI questionnaire data (Fenson et al. 1994; Ezeizbarrena & Fernandez, 2018).\nThere are two reasons why investigating the longest utterances produced by a participant are particularly informative about their language abilities.\nFirstly, in order to produce longer utterances children need to have mastered a variety of relatively advanced syntactic building blocks including using conjunctions to combine clauses, using prepositions, realising complex argument structures, and elaboration within phrases, e.g. adding adjectives to Noun Phrases, or adverbs to Verb Phrases. The longer utterances demonstrate a child’s use of such building blocks.\nIn addition, many of the shorter utterances are artificially short as they are influenced by discourse factors. For example, if the caregiver asks a “Yes/No” question, e.g. Did you have a good time? answering with a single word Yes is an appropriate response.\nBy focusing on the child’s longest utterances we can be sure that (a) they provide a full picture of the building blocks they have at their disposal, and (b) their length has not been influenced by discourse factors.\n\n\nThough for simplicity’s sake, I have described this as an “alphabetical sort”, it does more than just sort alphabetically. It sorts firstly by initial word class, and then alphabetically. This is exceptionally useful means of determining whether the child is dependent on any sentence-initial rote-learned formula.\nBelow, data from the CHILDES Thomas corpus has been sorted “alphabetically”. “Thomas” is aged 2 years and 6 months at the time the data were collected. We can see that alphabetical sorting can be used to identify frequent rote-learned utterances, e.g. All done now, or slot-and-frame patterns, e.g. Another X.\n\n\n\nAlphabetical Sorting",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Sorting"
+    ]
+  },
+  {
+    "objectID": "sorting.html#sorting-without-buttons",
+    "href": "sorting.html#sorting-without-buttons",
+    "title": "Sorting",
+    "section": "",
+    "text": "Any column in the spreadsheet may be sorted by pressing the sort symbol at the top of each column. However, the buttons make this process far easier.\n\n\n\nSorting without buttons",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Sorting"
+    ]
+  },
+  {
+    "objectID": "filtering.html",
+    "href": "filtering.html",
+    "title": "Filtering",
+    "section": "",
+    "text": "When you filter the table it will show only rows where a particular search string occurs.\n\n\n\nHere is a diagram showing the main search filters in MiMo:\n\n\n\nDiagram of different search filters in MiMo\n\n\n\n\nThe filter box on the top right is called the universal search filter as it is possible to enter a wide variety of search terms (described below).\n\n\n\nThe box on the top is the speaker filter designed to select specific speakers. We can use this to focus on the language of a particular individual. For example, in transcripts of child speech, there are a lot of adult utterances and relatively few child utterances. Filtering out the adult utterances can help the researcher or therapist to better analyse the child’s linguistic data.\n\n\n\nThese are not visible when the app starts up, but may be shown by clicking the Show column filters button.\n\n\n\nIf you click on either the universal search filter, or the speaker filter, they will provide a series of options. This is called autosuggest. As you type, the list of options narrows. For example, if you type has in the universal search box it will show you a wide range of possible grammatical features, including word classes. If you type hasP the list will narrow to show you hasPrep (has Preposition), and hasPron (has Pronoun). To select either of these just (a) select the term with the Down Arrow, (b) select the term by clicking on it, (c) continue typing.\nBelow is a screenshot of the autosuggest prompts you will see if you type the word verb.\n\n\n\nScreen of autosuggest capabilities\n\n\nTo select one of the autosuggestions just (a) type until only one word remains, and then press enter, or (b) moved the cursor down to select one of the autosuggestions and then press enter. The process is show in the videos below.\n\n\n\n\nBelow is a video showing how to search for child utterances (corresponding to the speaker CHI:) which contain an auxiliary (using the hasAux search in the universal search filter)\n\nNote that if multiple search terms are added to the universal search box, OR logic is applied. So if you search for hasAux and isInterrogative it will bring up any sentence with either an auxiliary verb, interrogative sentence form, or both.\nThe videos below show how to use AND logic. In the first video, an and statement is used in the universal search filter to find sentences where the auxiliary verb is can. Note how we use the & symbol, and place this in front of the item we are searching for (can).\n\nA much simpler alternative is to unhide the column filters, and use these to search for the specific word;\n\n\n\n\nThe following search terms are shown if you click in the Universal Search Box;\n\n\nThis is mainly used to identify utterances containing particular word classes. Examples are\n\n\nhasNoun, hasDet (Determiner), hasPron (Pronoun), hasPrep (Preposition), hasVerb (Main Verb), hasAux (Auxiliary Verb), hasAdv (Adverb), hasAdj (Adjective), hasCconj (Coordinating Conjunction), hasSconj (Subordinating Conjunction), hasNeg (negative particle), hasNum (numeral)\n\n\n\nhasPastTense,hasPresTense (present tense), hasCopula (copula = verb to be used as a main verb), hasProgForm / hasPresParticiple (progressive form), hasPerfForm / hasPerfParticiple (perfective form), and hasInfinitive.\nNB the terms “present participle” and “past participle” are misnomers as they do not mark present or past tense, but as they are so widely used I have included these as an option.\n\n\n\nhas2clauses, has3clauses, has4clauses, has5clauses, hasMultipleClauses\nTo determine the number of clauses MiMo counts the number of finite verbs\n\n\n\nhasPassive and hasRelativePronoun\n\n\n\nhasComment, hasTag\nIf you wish to search for a tag containing particular content type the following hasTagContentsOfTagMinusSpaces. So if you have created a tag called [Optional Infinitive Error], to find utterances containing this tag you search for hasTagOptionalInfinitiveError. Note the use of “camel case”. This makes the search string more readable, but it will work without the camel case.\n\n\n\nIt is possible to search for conversational turns of varying lengths as follows;\nturn1 identifies utterances in turns consisting of a single utterance. turn2 identifies utterances in turns consisting of two utterances. Other search strings are turn3 turn4 turn5 turn5plus. The latter identifies utterances which belong to conversational turns which are 5 or more utterances long.\n\n\n\n\nThese are used to identify Speech Acts;\nisDeclarative, isInterrogative, isQuestion, isImperative, isExclamative\nDon’t forget, there is a convention to use a single exclamation mark for a directive, and a double exclamation mark for an exclamative.\n\n\n\nAs shown in the second video above, you can type individual words in the Universal Search Box. If you do this, the drop down list will get smaller and smaller until there are no options, then you will be invited to select the word you have entered.\n\n\n\n\n\n\nWarning\n\n\n\nThe filter at the top right of the page operates primarily on the columns which lie to the right of the solid line. If you really wish to see how the filtering works, you can scroll to the right. But this is not recommended unless you feel super curious.\n\n\n\nImage warning you not to look at data on the right of the solid line\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis is an advanced feature and unless you are feeling super-confident you are not encouraged to do this!\n\n\nAs mentioned above, if you click Show column filters at the top of the page, filters will appear at the top of each column. This allows for more finegrained sorting. This feature is shown in the third video above.\nYou may, if you are feeling brave, scroll to the right to see the hidden columns, and try to filter on these. Column X shows very finegrained grammatical information including syntactic functions (Subject, Object), and Agreement phenomena. You may wish to conduct some searches on this column.\n\n\n\nFiltering is a powerful tool to help you explore your data in an intuitive and creative fashion. Here are just some of the things you can look for, which will give you a good indication of your child / client’s language level\n\n\nYou can search for infinitives using the search string hasInfinitive. This is an extremely useful search because the use of an infinitive where a tensed form is required is a common error in child language, and also in adult acquired language difficulties. This is sometimes described as an optional infinitive error.\n\n\n\nYou can find auxiliary verbs by using hasAux. Questions and negatives also frequently contain auxiliaries, and you can search for these using isInterrogative and hasNegative.\nYoung children struggle to use auxiliaries correctly. In particular, they have difficulties correctly using auxiliaries to make questions. A search for auxiliaries or questions will identify such difficulties\n\n\n\nYou can find these using hasMultipleClauses.\nBeing able to link clauses together using conjunctions is a relatively advanced skill. This search enables you to explore this ability. hasSconj will also identify sentences which contain subordinating conjunctions.\n\n\n\nIn English, children take a long time to master negatives. Often their negative utterances will lack do-support, e.g. she no like it.\n\n\n\nCase-marking errors on pronouns are an important characteristic of the speech of young children, e.g. Me go there. A search for pronouns will help to identify this common error pattern.\n\n\n\nYou can search for the passive using hasPassive and for relative clauses using hasRelativePronoun",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "filtering.html#what-is-filtering",
+    "href": "filtering.html#what-is-filtering",
+    "title": "Filtering",
+    "section": "",
+    "text": "When you filter the table it will show only rows where a particular search string occurs.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "filtering.html#how-do-you-filter",
+    "href": "filtering.html#how-do-you-filter",
+    "title": "Filtering",
+    "section": "",
+    "text": "Here is a diagram showing the main search filters in MiMo:\n\n\n\nDiagram of different search filters in MiMo\n\n\n\n\nThe filter box on the top right is called the universal search filter as it is possible to enter a wide variety of search terms (described below).\n\n\n\nThe box on the top is the speaker filter designed to select specific speakers. We can use this to focus on the language of a particular individual. For example, in transcripts of child speech, there are a lot of adult utterances and relatively few child utterances. Filtering out the adult utterances can help the researcher or therapist to better analyse the child’s linguistic data.\n\n\n\nThese are not visible when the app starts up, but may be shown by clicking the Show column filters button.\n\n\n\nIf you click on either the universal search filter, or the speaker filter, they will provide a series of options. This is called autosuggest. As you type, the list of options narrows. For example, if you type has in the universal search box it will show you a wide range of possible grammatical features, including word classes. If you type hasP the list will narrow to show you hasPrep (has Preposition), and hasPron (has Pronoun). To select either of these just (a) select the term with the Down Arrow, (b) select the term by clicking on it, (c) continue typing.\nBelow is a screenshot of the autosuggest prompts you will see if you type the word verb.\n\n\n\nScreen of autosuggest capabilities\n\n\nTo select one of the autosuggestions just (a) type until only one word remains, and then press enter, or (b) moved the cursor down to select one of the autosuggestions and then press enter. The process is show in the videos below.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "filtering.html#demo-videos",
+    "href": "filtering.html#demo-videos",
+    "title": "Filtering",
+    "section": "",
+    "text": "Below is a video showing how to search for child utterances (corresponding to the speaker CHI:) which contain an auxiliary (using the hasAux search in the universal search filter)\n\nNote that if multiple search terms are added to the universal search box, OR logic is applied. So if you search for hasAux and isInterrogative it will bring up any sentence with either an auxiliary verb, interrogative sentence form, or both.\nThe videos below show how to use AND logic. In the first video, an and statement is used in the universal search filter to find sentences where the auxiliary verb is can. Note how we use the & symbol, and place this in front of the item we are searching for (can).\n\nA much simpler alternative is to unhide the column filters, and use these to search for the specific word;",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "filtering.html#built-in-universal-search-filters",
+    "href": "filtering.html#built-in-universal-search-filters",
+    "title": "Filtering",
+    "section": "",
+    "text": "The following search terms are shown if you click in the Universal Search Box;\n\n\nThis is mainly used to identify utterances containing particular word classes. Examples are\n\n\nhasNoun, hasDet (Determiner), hasPron (Pronoun), hasPrep (Preposition), hasVerb (Main Verb), hasAux (Auxiliary Verb), hasAdv (Adverb), hasAdj (Adjective), hasCconj (Coordinating Conjunction), hasSconj (Subordinating Conjunction), hasNeg (negative particle), hasNum (numeral)\n\n\n\nhasPastTense,hasPresTense (present tense), hasCopula (copula = verb to be used as a main verb), hasProgForm / hasPresParticiple (progressive form), hasPerfForm / hasPerfParticiple (perfective form), and hasInfinitive.\nNB the terms “present participle” and “past participle” are misnomers as they do not mark present or past tense, but as they are so widely used I have included these as an option.\n\n\n\nhas2clauses, has3clauses, has4clauses, has5clauses, hasMultipleClauses\nTo determine the number of clauses MiMo counts the number of finite verbs\n\n\n\nhasPassive and hasRelativePronoun\n\n\n\nhasComment, hasTag\nIf you wish to search for a tag containing particular content type the following hasTagContentsOfTagMinusSpaces. So if you have created a tag called [Optional Infinitive Error], to find utterances containing this tag you search for hasTagOptionalInfinitiveError. Note the use of “camel case”. This makes the search string more readable, but it will work without the camel case.\n\n\n\nIt is possible to search for conversational turns of varying lengths as follows;\nturn1 identifies utterances in turns consisting of a single utterance. turn2 identifies utterances in turns consisting of two utterances. Other search strings are turn3 turn4 turn5 turn5plus. The latter identifies utterances which belong to conversational turns which are 5 or more utterances long.\n\n\n\n\nThese are used to identify Speech Acts;\nisDeclarative, isInterrogative, isQuestion, isImperative, isExclamative\nDon’t forget, there is a convention to use a single exclamation mark for a directive, and a double exclamation mark for an exclamative.\n\n\n\nAs shown in the second video above, you can type individual words in the Universal Search Box. If you do this, the drop down list will get smaller and smaller until there are no options, then you will be invited to select the word you have entered.\n\n\n\n\n\n\nWarning\n\n\n\nThe filter at the top right of the page operates primarily on the columns which lie to the right of the solid line. If you really wish to see how the filtering works, you can scroll to the right. But this is not recommended unless you feel super curious.\n\n\n\nImage warning you not to look at data on the right of the solid line",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "filtering.html#filtering-by-individual-columns",
+    "href": "filtering.html#filtering-by-individual-columns",
+    "title": "Filtering",
+    "section": "",
+    "text": "Warning\n\n\n\nThis is an advanced feature and unless you are feeling super-confident you are not encouraged to do this!\n\n\nAs mentioned above, if you click Show column filters at the top of the page, filters will appear at the top of each column. This allows for more finegrained sorting. This feature is shown in the third video above.\nYou may, if you are feeling brave, scroll to the right to see the hidden columns, and try to filter on these. Column X shows very finegrained grammatical information including syntactic functions (Subject, Object), and Agreement phenomena. You may wish to conduct some searches on this column.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "filtering.html#tips-on-using-filtering",
+    "href": "filtering.html#tips-on-using-filtering",
+    "title": "Filtering",
+    "section": "",
+    "text": "Filtering is a powerful tool to help you explore your data in an intuitive and creative fashion. Here are just some of the things you can look for, which will give you a good indication of your child / client’s language level\n\n\nYou can search for infinitives using the search string hasInfinitive. This is an extremely useful search because the use of an infinitive where a tensed form is required is a common error in child language, and also in adult acquired language difficulties. This is sometimes described as an optional infinitive error.\n\n\n\nYou can find auxiliary verbs by using hasAux. Questions and negatives also frequently contain auxiliaries, and you can search for these using isInterrogative and hasNegative.\nYoung children struggle to use auxiliaries correctly. In particular, they have difficulties correctly using auxiliaries to make questions. A search for auxiliaries or questions will identify such difficulties\n\n\n\nYou can find these using hasMultipleClauses.\nBeing able to link clauses together using conjunctions is a relatively advanced skill. This search enables you to explore this ability. hasSconj will also identify sentences which contain subordinating conjunctions.\n\n\n\nIn English, children take a long time to master negatives. Often their negative utterances will lack do-support, e.g. she no like it.\n\n\n\nCase-marking errors on pronouns are an important characteristic of the speech of young children, e.g. Me go there. A search for pronouns will help to identify this common error pattern.\n\n\n\nYou can search for the passive using hasPassive and for relative clauses using hasRelativePronoun",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🔎 Exploring your data",
+      "Filtering"
+    ]
+  },
+  {
+    "objectID": "languages.html",
+    "href": "languages.html",
+    "title": "Automatic language detection",
+    "section": "",
+    "text": "Automatic language detection\nOnce you have entered some text, MiMo automatically tries to detect the language. It needs to do this so it can ‘parse’ the text. This involves analysing its structure, and assigning part-of-speech tags. To detect the language, it uses an algorithm which prioritises speed over accuracy. The more text you input the more accurate the analysis.\n\n\n\nHow to check your language\n\n\nFor short fragments of text, it may get things spectacularly wrong. It sometimes analyses English as Middle Frisian! If this happens, all you have to do is click Select another language specify the language in the textbox as shown below.\n\n\n\nHow to select your own language\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou’ll note that you also have the option to select a specific grammar from the Universal Dependencies framework. There are a number of different grammars for each language. I am not sure why anyone would wish to do this, as the default grammar is often chosen for good reasons. But it’s always good to have options!\n\n\n\n\nWhat languages can MiMo analyse?\nMiMo uses the Universal Dependencies infrastructure to analyse text. This is partly funded by Google. Once the appropriate language is detected, MiMo downloads the right Universal Dependency grammar. Grammars are available for 65 mainly European languages (some non-living), which constitute only a small minority of the world’s language. These are listed in the manual for the R udpipe library. This list is reproduced in a simplified format below;\n\nAfrikaans, Ancient Greek, Arabic, Armenian, Basque, Belarusian, Bulgarian, Buryat, Catalan, Chinese (variety not specified), Classical Chinese, Coptic, Croatian, Czech, Danish, Dutch-alpino, English, Estonian, Finnish, French, Galician, German, Greek, Hebrew, Hindi, Hungarian, Indonesian”, Irish, Italian, Japanese, Kazakh, Korean, Kurmanji, Latin, Latvian, Lithuanian, Maltese, Marathi, North Sami, Norwegian, Old church Slavonic, Old French, Old Russian, Persian, Polish, Portuguese, Romanian, Russian, Sanskrit, Scottish Gaelic, Serbian, “slovak-snk”, Slovenian, Spanish, Swedish, Tamil, Telugu, Turkish, Ukrainian, Upper Sorbian, Urdu, Uyghur, Veitnamese, Wolof\n\nI have only trialled the app with the major European languages, and I am not sure how it will work with languages which do not use a Roman alphabet. Do give me feedback on this!\n\n\n\n\n\n\nNote\n\n\n\nIn future I may provide an option to use Large Language Models, e.g. chatGPT and Claude, to do the Part-of-Speech tagging. This would be great for languages which are not covered by the Universal Dependencies framework. However, this would involve quite a lot of re-engineering, so I have put it on the back-burner.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🧱 Basics",
+      "Automatic language detection"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "How is MiMo different to other apps?",
+    "section": "",
+    "text": "MiMo logo",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🧱 Basics",
+      "Intro"
+    ]
+  },
+  {
+    "objectID": "index.html#finding-the-sweet-spot",
+    "href": "index.html#finding-the-sweet-spot",
+    "title": "How is MiMo different to other apps?",
+    "section": "Finding “the sweet spot”",
+    "text": "Finding “the sweet spot”\nThere are a wide range of language analysis apps designed for child language and clinical data, including CLAN, SALT and SUGAR. However, none of these hits the 🍰 sweet spot between power and usability. CLAN is an impressive app, but difficult to learn, and for this reason is used mainly by the research community. SUGAR is a quick and simple system designed for Speech and Language Therapists, but the therapist still has to do some work to calculate metrics such as MLU, and code target structures. With MiMo the plan is to “get the best of both worlds” by combining the ease and simplicity of SUGAR with the power and flexibility CLAN.\nThe name MiMo describes the philosophy of the app. “Mi” refers to minimal inputs. In other words, the app is easy to use, and requires little training. “Mo” refers to maximal outputs. This refers to the rich data produced by the app, including 🌈 coloured word classes, and 📉 graphs of norms.",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🧱 Basics",
+      "Intro"
+    ]
+  },
+  {
+    "objectID": "index.html#making-language-analysis-fun",
+    "href": "index.html#making-language-analysis-fun",
+    "title": "How is MiMo different to other apps?",
+    "section": "Making language analysis fun 😁!",
+    "text": "Making language analysis fun 😁!\nMany apps for language analysis are quite mechanical in the way they work. You feed text in, and they produce a range of numerical metrics. There is little room for intellectual curiosity or intuition.\nMiMo, buy contrast, allows the user to explore their data. You can quickly and easily search for particular word classes, or grammatical phenomena. You can quickly identify the longer and more complex structures that a child produces. You can sort alphabetically to find rote-learned patterns that an individual is particularly dependent on. And these are just some of the things you can do!",
+    "crumbs": [
+      "⚙️ MiMo App",
+      "🧱 Basics",
+      "Intro"
+    ]
   },
   {
     "objectID": "entering_data.html",

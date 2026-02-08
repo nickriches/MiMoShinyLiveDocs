@@ -18,6 +18,8 @@ MiMo, buy contrast, allows the user to explore their data. You can quickly and e
 
 It's simple! To run the **language analysis app**, just go to [https://mimolanguageanalysis.uk](https://mimolanguageanalysis.uk) or click on the `⚙️ MiMo App` tab above. To run the **norms app** just go to [https://mimolanguageanalysis.uk](https://mimolanguageanalysis.uk), or click on the `📈 MiMo Norms` tab above (norms provided by CHILDES / Talkbank).
 
+If you want to run the app locally, see [making copies of the app](making_copies.qmd), but bear in mind, you will need internet connectivity for it to work.
+
 You can run a simple analysis in just a couple of minutes. Here is a video showing how to get up-and-running.
 
 {{< video https://youtu.be/CipY3y3SFq0 >}}

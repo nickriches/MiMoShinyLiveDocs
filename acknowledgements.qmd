@@ -48,9 +48,9 @@ Michalke, M. (2021). koRpus: Text Analysis with Emphasis on POS Tagging, Readabi
 
 Attali D (2023). _colourpicker: A Colour Picker Tool for Shiny and for Selecting Colours in Plots_. doi:10.32614/CRAN.package.colourpicker <https://doi.org/10.32614/CRAN.package.colourpicker>, R package version 1.3.0, <https://CRAN.R-project.org/package=colourpicker>.
 
-## ChatGPT
+## Large Language Models
 
-In the interests of full disclosure I have used ChatGPT quite intensively in the final stages of developing the app. In particular I have used it to write javascript routines, and it has also been super-helpful for getting the app to run via webR / web assembly.
+In the interests of full disclosure I have used ChatGPT and Claude quite intensively in the final stages of developing the app. In particular I have used them to write javascript routines, and they have also been super-helpful for getting the app to run via webR / web assembly.
 
 
 
